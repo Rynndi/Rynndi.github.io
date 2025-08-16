@@ -1,2 +1,2 @@
 # Rynndi.github.io
-A website about me, Rynn1
+A website about me, Rynn!
