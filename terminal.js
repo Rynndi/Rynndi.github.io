@@ -23,6 +23,16 @@ const asciiLogo = String.raw`
 const fileSystem = {
   type: "dir",
   children: {
+    source: {
+      type: "dir",
+      children: {
+        "parser.ml": {
+          type: "file",
+          staticPath: "files/parser.ml"
+        }
+      }
+    },
+
     "about.txt": {
       type: "file",
       content:
@@ -198,7 +208,16 @@ function promptHTML() {
 }
 
 function tokenize(line) {
-  return line.trim().split(/\s+/).filter(Boolean);
+  const tokens = [];
+  const regex = /"([^"]*)"|'([^']*)'|(\S+)/g;
+
+  let match;
+
+  while ((match = regex.exec(line)) !== null) {
+    tokens.push(match[1] || match[2] || match[3]);
+  }
+
+  return tokens;
 }
 
 function pathParts(path) {
@@ -264,33 +283,17 @@ function scrollToSection(id) {
 
 function help() {
   print(
-`commands:
-  help                 show this message
-  kfetch               show system information
-  ls [path]            list directory contents
-  cd <path>            change directory
-  cat <file>           print file contents
-  pwd                  show current directory
-  open <section>       scroll page to section
-  clear                clear terminal
-
-sections:
-  about
-  projects
-  research
-  art
-  contact
-
-examples:
-  ls
-  cd projects
-  cat four-days.txt
-  cd ..
-  open art`
+`Available commands:
+rfetch  Shows system information
+ls      List directory contents
+cat     Prints contents of files
+cd      Changes directory
+parse   Generates syntax trees for a sentence
+help    Display this help message`
   );
 }
 
-function kfetch() {
+function rfetch() {
   printHTML(
 `<div class="terminal-splash"><pre class="terminal-ascii">${escapeHTML(asciiLogo)}</pre><div class="terminal-info"><div class="terminal-user">rynn@world-machine</div><div class="terminal-rule">-------------------</div><div><span class="terminal-label">Name:</span> Rynn D</div><div><span class="terminal-label">Education:</span> Computer Science &amp; Linguistics B.A.</div><div><span class="terminal-label">Focus:</span> Games · Research · Art · Language Systems</div><div><span class="terminal-label">OS:</span> GitHub Pages</div><div><span class="terminal-label">WM:</span> World Machine</div><div><span class="terminal-label">Theme:</span> Black &amp; white retro web</div><div><span class="terminal-label">Shell:</span> custom browser terminal</div><div><span class="terminal-label">Editor:</span> VSCode / Neovim</div></div></div>`
   );
@@ -338,7 +341,7 @@ function cd(args) {
   cwd = normalizePath(path);
 }
 
-function cat(args) {
+async function cat(args) {
   const path = args[0];
 
   if (!path) {
@@ -358,7 +361,30 @@ function cat(args) {
     return;
   }
 
-  print(node.content);
+  if (node.content) {
+    print(node.content);
+    return;
+  }
+
+  if (node.staticPath) {
+    try {
+      const response = await fetch(node.staticPath);
+
+      if (!response.ok) {
+        print(`cat: could not read ${path}`);
+        return;
+      }
+
+      const text = await response.text();
+      print(text);
+    } catch (error) {
+      print(`cat: error reading ${path}`);
+    }
+
+    return;
+  }
+
+  print(`cat: ${path}: empty file`);
 }
 
 function pwd() {
@@ -369,20 +395,76 @@ function clear() {
   output.innerHTML = "";
 }
 
-function runCommand(line) {
+function parseSentence(args) {
+  const sentence = args.join(" ").trim();
+
+  if (!sentence) {
+    print('usage: parse "The man saw the boy with the telescope"');
+    return;
+  }
+
+  if (typeof window.parseEnglish === "function") {
+    try {
+      const result = window.parseEnglish(sentence);
+      print(result);
+    } catch (error) {
+      print(`parse: parser error: ${error.message}`);
+    }
+
+    return;
+  }
+
+  const normalized = sentence.toLowerCase();
+
+  if (normalized === "the man saw the boy with the telescope") {
+    print(
+`Parsing: ${sentence}
+
+2 parses found.
+
+Parse 1:
+[S [NP the man] [VP [V saw] [NP [NP the boy] [PP with the telescope]]]]
+
+Parse 2:
+[S [NP the man] [VP [VP [V saw] [NP the boy]] [PP with the telescope]]]`
+    );
+    return;
+  }
+
+  print(
+`Parsing: ${sentence}
+
+Parser module not loaded yet.
+
+Right now, this website can read the OCaml source with:
+
+  cat source/parser.ml
+
+But the parse command cannot execute the OCaml parser until the parser is compiled
+into browser JavaScript and exposes:
+
+  window.parseEnglish(sentence)`
+  );
+}
+
+async function runCommand(line) {
   const tokens = tokenize(line);
   if (tokens.length === 0) return;
 
-  const command = tokens[0];
+  const command = tokens[0].toLowerCase();
   const args = tokens.slice(1);
 
   switch (command) {
+    case "parse":
+      parseSentence(args);
+      break;
+
     case "help":
       help();
       break;
 
-    case "kfetch":
-      kfetch();
+    case "rfetch":
+      rfetch();
       break;
 
     case "ls":
@@ -394,7 +476,7 @@ function runCommand(line) {
       break;
 
     case "cat":
-      cat(args);
+      await cat(args);
       break;
 
     case "pwd":
@@ -427,7 +509,7 @@ function runCommand(line) {
   }
 }
 
-form.addEventListener("submit", event => {
+form.addEventListener("submit", async event => {
   event.preventDefault();
 
   const line = input.value;
@@ -439,7 +521,7 @@ form.addEventListener("submit", event => {
     historyIndex = history.length;
   }
 
-  runCommand(line);
+  await runCommand(line);
   input.value = "";
 });
 
