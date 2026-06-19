@@ -1,8 +1,12 @@
 18 June 2026
 Pee pee pee poo poo poo. 
+
+I graduated from UCLA four days ago. Commencement took three days. My parents drove me home, and I slept like the dead. 
+
 Today I started working on the website for my portfolio. I connected my OCaml left corner parser to my website terminal. The fake filesystem is starting to feel like a real little OS.
 
 Did you know there is such a thing called js_of_ocaml? It's a compiler from OCaml bytecode to javascript, so it can actually run my ocaml parser in javascript. It was hard, and there were lots of runtime limitations, so I had to optimize it even harder than I did for my actual project. I hope my professor likes it-- the final grades for the class haven't come out yet.
 
 All my friends have gotten jobs now or are applying to grad school, and ever since graduation I've been kind of aimless. I've been meaning to work on Four Days, but it's hard coming up with gameplay that's kind of fun. All my friends were lowkey dogging on all my ideas-- and I get their point-- it's not fun. No matter how good the art, or the music, or the story is, if the central MVP isn't good, it's not worth implementing. Iteration is hard, and "fail faster" doesn't even work if there's nothing to fail faster in. 
-Asdf
+
+There's a few things I want to catch up on. First things first, I haven't done leetcode practice in over a year. There are some companies that my friends want me to apply to. I've never done well on timed interview OA questions though-- that's for the ICPC kids-- and it stresses me out. I'd much rather just spend time working on the stuff and personal projects I want to make. But, indie dev doesn't pay the bills. Still-- to fill up this website, I want to at least show off some art. I was planning on getting quite good at nomad + blender and maybe publish a true visual portfolio. I also want to commit a few more games at least. With time, this website will slowly start to become a pretty thing. I'm already really proud of the terminal so far, though, even if the source repo on my computer is organized messily lol. I've never been as neat as Aubrey when it came to HTML. 
