@@ -4,3 +4,4 @@ Today I started working on the website for my portfolio. I connected my OCaml le
 
 Did you know there is such a thing called js_of_ocaml? It's a compiler from OCaml bytecode to javascript, so it can actually run my ocaml parser in javascript. It was hard, and there were lots of runtime limitations, so I had to optimize it even harder than I did for my actual project. I hope my professor likes it-- the final grades for the class haven't come out yet.
 
+All my friends have gotten jobs now or are applying to grad school, and ever since graduation I've been kind of aimless. I've been meaning to work on Four Days, but it's hard coming up with gameplay that's kind of fun. All my friends were lowkey dogging on all my ideas-- and I get their point-- it's not fun. No matter how good the art, or the music, or the story is, if the central MVP isn't good, it's not worth implementing. Iteration is hard, and "fail faster" doesn't even work if there's nothing to fail faster in. 
