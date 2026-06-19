@@ -7,57 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <h1>Rynn D</h1>
-    <p>CS + Linguistics · Game Developer · Researcher · Artist</p>
-  </header>
+  <main class="page">
+    <section class="terminal-window" onclick="focusInput()">
+      <div class="terminal-content" id="terminal-output"></div>
 
-  <main>
-    <section>
-      <h2>About</h2>
-      <p>
-        I build systems that turn structure into meaning: language, games,
-        parsers, memory, and interactive worlds.
-      </p>
-    </section>
-
-    <section>
-      <h2>Featured Work</h2>
-
-      <article>
-        <h3>Four Days</h3>
-        <p>
-          A meta-narrative game about memory, source code, recursion, and
-          reality editing.
-        </p>
-      </article>
-
-      <article>
-        <h3>Mandarin Third Tone Sandhi Parser</h3>
-        <p>
-          An OCaml parser exploring syntax-prosody mapping and constraint-based
-          alternations in Mandarin third tone sandhi.
-        </p>
-      </article>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>OCaml parsing and grammar tools</li>
-        <li>Unity game development</li>
-        <li>Computational linguistics / phonology</li>
-        <li>3D art, modeling, and worldbuilding</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>Email: your-email@example.com</p>
-      <p>GitHub: github.com/yourusername</p>
+      <form id="terminal-form" autocomplete="off">
+        <span class="prompt">/&gt;</span>
+        <input id="terminal-input" autofocus />
+      </form>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="terminal.js"></script>
 </body>
 </html>
