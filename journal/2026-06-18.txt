@@ -1,3 +1,6 @@
-18 June 2026 
-Today I started working on the website for my portfolio. I connected my OCaml left corner parser to my website terminal. The fake filesystem is starting to feel like a real little OS. Did you know there is such a thing called js_of_ocaml? It's a compiler from Ocaml bytecode to javascript, so it can actually run my ocaml parser in javascript. It was hard, and there were lots of runtime limitations, so I had to optimize it even harder than I did for my actual project. I hope my professor likes it-- the final grades for the class haven't come out yet. 
+18 June 2026
+Pee pee pee poo poo poo. 
+Today I started working on the website for my portfolio. I connected my OCaml left corner parser to my website terminal. The fake filesystem is starting to feel like a real little OS.
+
+Did you know there is such a thing called js_of_ocaml? It's a compiler from OCaml bytecode to javascript, so it can actually run my ocaml parser in javascript. It was hard, and there were lots of runtime limitations, so I had to optimize it even harder than I did for my actual project. I hope my professor likes it-- the final grades for the class haven't come out yet.
 
