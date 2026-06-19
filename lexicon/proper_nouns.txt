@@ -1,0 +1,11 @@
+carol
+catherine
+english
+github
+john
+mandarin
+mary
+mit
+ocaml
+rynn
+ucla

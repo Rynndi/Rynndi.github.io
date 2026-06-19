@@ -23,6 +23,34 @@ const asciiLogo = String.raw`
 const fileSystem = {
   type: "dir",
   children: {
+    lexicon: {
+  type: "dir",
+  children: {
+    "determiners.txt": { type: "file", staticPath: "lexicon/determiners.txt" },
+    "wh_determiners.txt": { type: "file", staticPath: "lexicon/wh_determiners.txt" },
+    "pronouns.txt": { type: "file", staticPath: "lexicon/pronouns.txt" },
+    "nouns.txt": { type: "file", staticPath: "lexicon/nouns.txt" },
+    "adjectives.txt": { type: "file", staticPath: "lexicon/adjectives.txt" },
+    "adverbs.txt": { type: "file", staticPath: "lexicon/adverbs.txt" },
+    "verbs.txt": { type: "file", staticPath: "lexicon/verbs.txt" },
+    "participles.txt": { type: "file", staticPath: "lexicon/participles.txt" },
+    "gerunds.txt": { type: "file", staticPath: "lexicon/gerunds.txt" },
+    "auxiliaries.txt": { type: "file", staticPath: "lexicon/auxiliaries.txt" },
+    "modals.txt": { type: "file", staticPath: "lexicon/modals.txt" },
+    "tense_words.txt": { type: "file", staticPath: "lexicon/tense_words.txt" },
+    "prepositions.txt": { type: "file", staticPath: "lexicon/prepositions.txt" },
+    "complementizers.txt": { type: "file", staticPath: "lexicon/complementizers.txt" },
+    "question_auxiliaries.txt": { type: "file", staticPath: "lexicon/question_auxiliaries.txt" },
+    "wh_question_auxiliaries.txt": { type: "file", staticPath: "lexicon/wh_question_auxiliaries.txt" },
+    "wh_prepositions.txt": { type: "file", staticPath: "lexicon/wh_prepositions.txt" },
+    "coordinators.txt": { type: "file", staticPath: "lexicon/coordinators.txt" },
+    "trace_words.txt": { type: "file", staticPath: "lexicon/trace_words.txt" },
+    "numbers.txt": { type: "file", staticPath: "lexicon/numbers.txt" },
+    "units.txt": { type: "file", staticPath: "lexicon/units.txt" },
+    "currencies.txt": { type: "file", staticPath: "lexicon/currencies.txt" }
+  }
+},
+
     source: {
       type: "dir",
       children: {
@@ -265,7 +293,7 @@ function renderSplash() {
   output.innerHTML = "";
 
   printHTML(
-`<div class="terminal-splash"><pre class="terminal-ascii">${escapeHTML(asciiLogo)}</pre><div class="terminal-info"><div class="terminal-user">rynn@world-machine</div><div class="terminal-rule">-------------------</div><div><span class="terminal-label">Name:</span> Rynn D</div><div><span class="terminal-label">Education:</span> Computer Science &amp; Linguistics B.A.</div><div><span class="terminal-label">Focus:</span> Games · Research · Art · Language Systems</div><div><span class="terminal-label">OS:</span> GitHub Pages</div><div><span class="terminal-label">WM:</span> World Machine</div><div><span class="terminal-label">Theme:</span> Black &amp; white retro web</div><div><span class="terminal-label">Shell:</span> custom browser terminal</div><div><span class="terminal-label">Editor:</span> VSCode / Neovim</div></div></div><div class="terminal-hint">Type <span>help</span> to see a list of commands.</div>`
+`<div class="terminal-splash"><pre class="terminal-ascii">${escapeHTML(asciiLogo)}</pre><div class="terminal-info"><div class="terminal-user">rynn@rynn-os</div><div class="terminal-rule">-------------------</div><div><span class="terminal-label">Name:</span> Rynn D</div><div><span class="terminal-label">Education:</span> Computer Science &amp; Linguistics B.A.</div><div><span class="terminal-label">Focus:</span> Games · Research · Art · Language Systems</div><div><span class="terminal-label">OS:</span> GitHub Pages</div><div><span class="terminal-label">WM:</span> World Machine</div><div><span class="terminal-label">Theme:</span> Black &amp; white retro web</div><div><span class="terminal-label">Shell:</span> custom browser terminal</div><div><span class="terminal-label">Editor:</span> VSCode / Neovim</div></div></div><div class="terminal-hint">Type <span>help</span> to see a list of commands.</div>`
   );
 }
 
@@ -295,7 +323,7 @@ help    Display this help message`
 
 function rfetch() {
   printHTML(
-`<div class="terminal-splash"><pre class="terminal-ascii">${escapeHTML(asciiLogo)}</pre><div class="terminal-info"><div class="terminal-user">rynn@world-machine</div><div class="terminal-rule">-------------------</div><div><span class="terminal-label">Name:</span> Rynn D</div><div><span class="terminal-label">Education:</span> Computer Science &amp; Linguistics B.A.</div><div><span class="terminal-label">Focus:</span> Games · Research · Art · Language Systems</div><div><span class="terminal-label">OS:</span> GitHub Pages</div><div><span class="terminal-label">WM:</span> World Machine</div><div><span class="terminal-label">Theme:</span> Black &amp; white retro web</div><div><span class="terminal-label">Shell:</span> custom browser terminal</div><div><span class="terminal-label">Editor:</span> VSCode / Neovim</div></div></div>`
+`<div class="terminal-splash"><pre class="terminal-ascii">${escapeHTML(asciiLogo)}</pre><div class="terminal-info"><div class="terminal-user">rynn@rynn-os</div><div class="terminal-rule">-------------------</div><div><span class="terminal-label">Name:</span> Rynn D</div><div><span class="terminal-label">Education:</span> Computer Science &amp; Linguistics B.A.</div><div><span class="terminal-label">Focus:</span> Games · Research · Art · Language Systems</div><div><span class="terminal-label">OS:</span> GitHub Pages</div><div><span class="terminal-label">WM:</span> World Machine</div><div><span class="terminal-label">Theme:</span> Black &amp; white retro web</div><div><span class="terminal-label">Shell:</span> custom browser terminal</div><div><span class="terminal-label">Editor:</span> VSCode / Neovim</div></div></div>`
   );
 }
 

@@ -1,0 +1,12 @@
+can
+could
+dare
+may
+might
+must
+need
+ought
+shall
+should
+will
+would

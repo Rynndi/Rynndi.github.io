@@ -1,0 +1,5 @@
+(executable
+ (name parser_web)
+ (modes js)
+ (libraries js_of_ocaml)
+ (flags (:standard -w -32)))
