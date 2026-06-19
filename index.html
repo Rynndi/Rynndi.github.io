@@ -3,21 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Rynn D</title>
+
   <link rel="stylesheet" href="style.css" />
+  <script src="terminal.js" defer></script>
 </head>
+
 <body>
-  <main class="page">
-    <section class="terminal-window" onclick="focusInput()">
-      <div class="terminal-content" id="terminal-output"></div>
+  <header class="topbar">
+    <a class="site-logo" href="#home">R</a>
 
-      <form id="terminal-form" autocomplete="off">
-        <span class="prompt">/&gt;</span>
-        <input id="terminal-input" autofocus />
-      </form>
-    </section>
-  </main>
+    <nav class="topnav">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#art">Gallery</a>
+      <a href="#contact">About / Contact</a>
+    </nav>
+  </header>
 
-  <script src="terminal.js"></script>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <section class="profile-card">
+        <div class="avatar-frame">
+          <div class="avatar-placeholder">RD</div>
+        </div>
+
+        <h1>RYNN D</h1>
+        <p>CS + Linguistics · Games · Research · Art</p>
+      </section>
+
+      <nav class="side-buttons">
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#art">Art / Sketches</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section id="home" class="hero-section">
+        <section class="hero-terminal-frame">
+          <div class="desktop-titlebar">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="window-title">world-machine.exe</span>
+          </div>
+
+          <div class="terminal-screen">
+            <div id="terminal-output"></div>
+
+            <form id="terminal-form" autocomplete="off">
+              <span class="terminal-prompt">/&gt;</span>
+              <input id="terminal-input" autofocus />
+            </form>
+          </div>
+        </section>
+
+        <p class="hero-caption">
+          Highlighted works · explore the terminal or click sections below
+        </p>
+      </section>
+
+      <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>
+          I am a CS + Linguistics graduate interested in language systems,
+          games, interactive media, research, and art. I build systems that turn
+          structure into meaning.
+        </p>
+      </section>
+
+      <section id="projects" class="content-section">
+        <h2>Projects</h2>
+
+        <article class="project-card">
+          <h3>Four Days</h3>
+          <p>
+            A meta-narrative game about memory, recursion, source files, and
+            reality editing through a custom terminal-like interface.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <h3>Mandarin Third Tone Sandhi Parser</h3>
+          <p>
+            An OCaml parser exploring syntax-prosody mapping and
+            constraint-based alternations in Mandarin third tone sandhi.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <h3>World Machine Interface</h3>
+          <p>
+            A fake OS / virtual filesystem prototype for navigating projects,
+            memories, source files, and worldbuilding fragments.
+          </p>
+        </article>
+      </section>
+
+      <section id="research" class="content-section">
+        <h2>Research</h2>
+        <p>
+          My research interests include computational linguistics, phonology,
+          prosody, formal grammars, parsing, digital humanities, and tools for
+          making linguistic theory executable and inspectable.
+        </p>
+      </section>
+
+      <section id="art" class="content-section">
+        <h2>Art / Sketches</h2>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">Sketch 01</div>
+          <div class="gallery-item">Sketch 02</div>
+          <div class="gallery-item">Sketch 03</div>
+          <div class="gallery-item">Model 01</div>
+          <div class="gallery-item">Worldbuilding</div>
+          <div class="gallery-item">Concept Art</div>
+        </div>
+      </section>
+
+      <section id="contact" class="content-section">
+        <h2>About / Contact</h2>
+        <p>Email: your-email@example.com</p>
+        <p>GitHub: github.com/yourusername</p>
+        <p>LinkedIn: linkedin.com/in/yourusername</p>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

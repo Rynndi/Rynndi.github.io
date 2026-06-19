@@ -2,85 +2,371 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  min-height: 100vh;
-  background: #1e1e2e;
-  color: #f5f5f5;
-  font-family: "Courier New", monospace;
+  background: #000000;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.page {
-  min-height: 100vh;
+/* Top navigation */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  height: 78px;
+  padding: 0 2rem;
+
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  background: #000000;
+  border-bottom: 2px solid #ffffff;
+}
+
+.site-logo {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+
+.site-logo:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.topnav {
+  display: flex;
+  gap: 1rem;
+}
+
+.topnav a {
+  padding: 0.55rem 1.35rem;
+
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.95rem;
+
+  border: 2px solid #ffffff;
+  background: #000000;
+}
+
+.topnav a:hover {
+  color: #000000;
+  background: #ffffff;
+}
+
+/* Main layout */
+
+.page-shell {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 3rem;
+}
+
+.sidebar {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+}
+
+/* Profile */
+
+.profile-card {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.avatar-frame {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 1rem;
+
+  overflow: hidden;
+
+  background: #000000;
+  border: 2px solid #ffffff;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+}
+
+.profile-card h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2.4rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.profile-card p {
+  margin: 0.8rem 0 0;
+  color: #d8d8d8;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+/* Side buttons */
+
+.side-buttons {
+  margin-top: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.side-buttons a {
+  padding: 0.95rem 1rem;
+
+  display: block;
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  background: #1a1a1a;
+  border: 2px solid #ffffff;
+
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.side-buttons a:hover {
+  color: #000000;
+  background: #ffffff;
+}
+
+/* Main content */
+
+.main-content {
+  min-width: 0;
+}
+
+.hero-section {
+  min-height: 720px;
+
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 3rem;
 }
 
-.terminal-window {
-  width: min(1200px, 95vw);
-  height: min(720px, 85vh);
-  padding: 1.5rem;
-  background: #11111b;
-  border: 8px solid #89aaff;
-  border-radius: 32px;
+/* Big terminal */
+
+.hero-terminal-frame {
+  width: 100%;
+  min-height: 540px;
+
+  border: 2px solid #ffffff;
+  overflow: hidden;
+
+  background: #000000;
+  box-shadow:
+    0 0 0 6px #000000,
+    0 0 0 8px #ffffff;
+}
+
+.desktop-titlebar {
+  height: 38px;
+  padding: 0 0.9rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  background: #000000;
+  border-bottom: 2px solid #ffffff;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.window-title {
+  margin-left: 0.5rem;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.terminal-screen {
+  height: 540px;
+  padding: 1.25rem;
+
   overflow-y: auto;
-  box-shadow: 0 0 30px rgba(137, 170, 255, 0.25);
+  cursor: text;
+
+  background:
+    linear-gradient(rgba(120, 255, 120, 0.05) 50%, rgba(0, 0, 0, 0.02) 50%),
+    radial-gradient(circle at center, rgba(0, 255, 120, 0.08), transparent 60%),
+    #031107;
+  background-size: 100% 4px, 100% 100%, 100% 100%;
+
+  color: #8dff72;
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  line-height: 1.35;
+  text-shadow: 0 0 8px rgba(141, 255, 114, 0.75);
 }
 
-.terminal-content {
+#terminal-output {
   white-space: pre-wrap;
-  line-height: 1.25;
-  font-size: 1.05rem;
 }
 
 #terminal-form {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   margin-top: 0.25rem;
 }
 
-.prompt {
-  color: #89ff5a;
-  font-weight: bold;
+.terminal-prompt {
+  color: #baff9a;
+  font-weight: 900;
 }
 
 #terminal-input {
+  min-width: 0;
   flex: 1;
+
   border: none;
   outline: none;
   background: transparent;
-  color: #f5f5f5;
+
+  color: #8dff72;
   font: inherit;
-  caret-color: #89ff5a;
+  caret-color: #baff9a;
+  text-shadow: inherit;
 }
 
-.green {
-  color: #89ff5a;
-  font-weight: bold;
+#terminal-input:focus {
+  outline: none;
+  box-shadow: none;
 }
 
-.yellow {
-  color: #ffb000;
-  font-weight: bold;
+/* Terminal splash */
+
+.terminal-splash {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr);
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 1.25rem;
+
+  white-space: normal;
 }
 
-.blue {
-  color: #89aaff;
-  font-weight: bold;
+.terminal-ascii {
+  margin: 0;
+  white-space: pre;
+
+  font-family: "Courier New", monospace;
+  font-size: clamp(0.52rem, 0.85vw, 0.88rem);
+  line-height: 1.05;
+
+  color: #a8ff8b;
+  text-shadow: 0 0 8px rgba(168, 255, 139, 0.75);
 }
 
-.red {
-  color: #ff6b6b;
-  font-weight: bold;
+.terminal-info {
+  white-space: normal;
+
+  color: #8dff72;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  line-height: 1.35;
 }
 
-.dim {
-  color: #a6adc8;
+.terminal-info div {
+  margin: 0;
 }
 
-a {
-  color: #89aaff;
+.terminal-user {
+  color: #6fff5f;
+  font-weight: 900;
+}
+
+.terminal-rule {
+  color: #a8ff8b;
+  margin-bottom: 0.35rem;
+}
+
+.terminal-label {
+  color: #c7ffb8;
+  font-weight: 900;
+}
+
+.terminal-hint {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+
+  color: #8dff72;
+  font-weight: 900;
+  white-space: normal;
+}
+
+.terminal-hint span {
+  color: #d9ffcb;
+  text-decoration: underline;
+}
+
+/* Terminal command colors */
+
+.terminal-dir,
+.terminal-file,
+.terminal-command {
+  color: #a8ff8b;
+  font-weight: 900;
+}
+
+/* Scrollbar */
+
+.terminal-screen::-webkit-scrollbar {
+  width: 12px;
+}
+
+.terminal-screen::-webkit-scrollbar-track {
+  background: #020b04;
+  border-left: 1px solid #2d5a32;
+}
+
+.terminal-screen::-webkit-scrollbar-thumb {
+  background: #6fff5f;
 }
