@@ -12,70 +12,125 @@ let history = [];
 let historyIndex = 0;
 
 const asciiLogo = String.raw`
-██████╗ ██╗   ██╗███╗   ██╗███╗   ██╗
-██╔══██╗╚██╗ ██╔╝████╗  ██║████╗  ██║
-██████╔╝ ╚████╔╝ ██╔██╗ ██║██╔██╗ ██║
-██╔══██╗  ╚██╔╝  ██║╚██╗██║██║╚██╗██║
-██║  ██║   ██║   ██║ ╚████║██║ ╚████║
-╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═══╝╚═╝  ╚═══╝
+__________                      ________    _________
+\______   \___.__. ____   ____  \_____  \  /   _____/
+ |       _<   |  |/    \ /    \  /   |   \ \_____  \ 
+ |    |   \\___  |   |  \   |  \/    |    \/        \
+ |____|_  // ____|___|  /___|  /\_______  /_______  /
+        \/ \/         \/     \/         \/        \/ 
 `;
+
+const OS_RELEASE = `PRETTY_NAME="Rynn OS 1.0.0 LTS"
+NAME="rynn-os"
+VERSION="1.0.0"
+VERSION_ID="1.0.0"
+VERSION_CODENAME="rynndih"
+ID=rynn-os
+ID_LIKE=unix
+HOME_URL="https://rynndi.github.io"`;
 
 const fileSystem = {
   type: "dir",
   children: {
-    lexicon: {
-  type: "dir",
-  children: {
-    "determiners.txt": { type: "file", staticPath: "lexicon/determiners.txt" },
-    "wh_determiners.txt": { type: "file", staticPath: "lexicon/wh_determiners.txt" },
-    "pronouns.txt": { type: "file", staticPath: "lexicon/pronouns.txt" },
-    "nouns.txt": { type: "file", staticPath: "lexicon/nouns.txt" },
-    "adjectives.txt": { type: "file", staticPath: "lexicon/adjectives.txt" },
-    "adverbs.txt": { type: "file", staticPath: "lexicon/adverbs.txt" },
-    "verbs.txt": { type: "file", staticPath: "lexicon/verbs.txt" },
-    "participles.txt": { type: "file", staticPath: "lexicon/participles.txt" },
-    "gerunds.txt": { type: "file", staticPath: "lexicon/gerunds.txt" },
-    "auxiliaries.txt": { type: "file", staticPath: "lexicon/auxiliaries.txt" },
-    "modals.txt": { type: "file", staticPath: "lexicon/modals.txt" },
-    "tense_words.txt": { type: "file", staticPath: "lexicon/tense_words.txt" },
-    "prepositions.txt": { type: "file", staticPath: "lexicon/prepositions.txt" },
-    "complementizers.txt": { type: "file", staticPath: "lexicon/complementizers.txt" },
-    "question_auxiliaries.txt": { type: "file", staticPath: "lexicon/question_auxiliaries.txt" },
-    "wh_question_auxiliaries.txt": { type: "file", staticPath: "lexicon/wh_question_auxiliaries.txt" },
-    "wh_prepositions.txt": { type: "file", staticPath: "lexicon/wh_prepositions.txt" },
-    "coordinators.txt": { type: "file", staticPath: "lexicon/coordinators.txt" },
-    "trace_words.txt": { type: "file", staticPath: "lexicon/trace_words.txt" },
-    "numbers.txt": { type: "file", staticPath: "lexicon/numbers.txt" },
-    "units.txt": { type: "file", staticPath: "lexicon/units.txt" },
-    "currencies.txt": { type: "file", staticPath: "lexicon/currencies.txt" }
-  }
-},
-
-    source: {
+    bin: {
       type: "dir",
       children: {
-        "parser.ml": {
+        cat: {
           type: "file",
-          staticPath: "files/parser.ml"
+          content: "cat: print the contents of a file"
+        },
+        cd: {
+          type: "file",
+          content: "cd: change the current directory"
+        },
+        help: {
+          type: "file",
+          content: "help: show available commands"
+        },
+        ls: {
+          type: "file",
+          content: "ls: list directory contents"
+        },
+        parse: {
+          type: "file",
+          content: "parse: generate syntax trees for a sentence"
+        },
+        rfetch: {
+          type: "file",
+          content: "rfetch: show system information"
         }
       }
     },
 
-    "about.txt": {
+    journal: {
+      type: "dir",
+      children: {}
+    },
+
+    "os-release": {
       type: "file",
-      content:
-`Rynn D
-CS + Linguistics · Games · Research · Art
-
-I build systems that turn structure into meaning:
-language, games, memory, parsers, art, and interactive worlds.
-
-This site is a small fake operating system for exploring my work.`
+      content: OS_RELEASE
     },
 
     projects: {
       type: "dir",
       children: {
+        "ocaml-parser": {
+          type: "dir",
+          children: {
+            readme: {
+              type: "file",
+              content:
+`OCaml Syntax Parser
+
+A browser-based OCaml parser project for exploring English syntax,
+Mandarin third tone sandhi, lexical categories, and ambiguity.
+
+Try:
+  parse "the man saw the boy with the telescope"
+  parse "i wanted to find you"`
+            },
+
+            source: {
+              type: "dir",
+              children: {
+                "parser.ml": {
+                  type: "file",
+                  staticPath: "files/parser.ml"
+                }
+              }
+            },
+
+            lexicon: {
+              type: "dir",
+              children: {
+                "determiners.txt": { type: "file", staticPath: "lexicon/determiners.txt" },
+                "wh_determiners.txt": { type: "file", staticPath: "lexicon/wh_determiners.txt" },
+                "pronouns.txt": { type: "file", staticPath: "lexicon/pronouns.txt" },
+                "nouns.txt": { type: "file", staticPath: "lexicon/nouns.txt" },
+                "adjectives.txt": { type: "file", staticPath: "lexicon/adjectives.txt" },
+                "adverbs.txt": { type: "file", staticPath: "lexicon/adverbs.txt" },
+                "verbs.txt": { type: "file", staticPath: "lexicon/verbs.txt" },
+                "participles.txt": { type: "file", staticPath: "lexicon/participles.txt" },
+                "gerunds.txt": { type: "file", staticPath: "lexicon/gerunds.txt" },
+                "auxiliaries.txt": { type: "file", staticPath: "lexicon/auxiliaries.txt" },
+                "modals.txt": { type: "file", staticPath: "lexicon/modals.txt" },
+                "tense_words.txt": { type: "file", staticPath: "lexicon/tense_words.txt" },
+                "prepositions.txt": { type: "file", staticPath: "lexicon/prepositions.txt" },
+                "complementizers.txt": { type: "file", staticPath: "lexicon/complementizers.txt" },
+                "question_auxiliaries.txt": { type: "file", staticPath: "lexicon/question_auxiliaries.txt" },
+                "wh_question_auxiliaries.txt": { type: "file", staticPath: "lexicon/wh_question_auxiliaries.txt" },
+                "wh_prepositions.txt": { type: "file", staticPath: "lexicon/wh_prepositions.txt" },
+                "coordinators.txt": { type: "file", staticPath: "lexicon/coordinators.txt" },
+                "trace_words.txt": { type: "file", staticPath: "lexicon/trace_words.txt" },
+                "numbers.txt": { type: "file", staticPath: "lexicon/numbers.txt" },
+                "units.txt": { type: "file", staticPath: "lexicon/units.txt" },
+                "currencies.txt": { type: "file", staticPath: "lexicon/currencies.txt" }
+              }
+            }
+          }
+        },
+
         "four-days.txt": {
           type: "file",
           content:
@@ -122,86 +177,63 @@ Interests:
       }
     },
 
-    research: {
-      type: "dir",
-      children: {
-        "interests.txt": {
-          type: "file",
-          content:
-`Research Interests
+    readme: {
+      type: "file",
+      content:
+`Welcome to rynn-os.
 
-- computational linguistics
-- phonology and prosody
-- formal grammars
-- parsing
-- syntax-prosody interfaces
-- digital humanities
-- tools for making theory executable`
-        },
+Root contains:
+  bin
+  journal
+  os-release
+  projects
+  readme
 
-        "statement.txt": {
-          type: "file",
-          content:
-`Research Statement Fragment
-
-I am interested in systems that make hidden linguistic structure visible:
-parsers, grammars, prosodic domains, constraints, and interfaces that
-allow people to inspect how meaning is built.`
-        }
-      }
-    },
-
-    art: {
-      type: "dir",
-      children: {
-        "statement.txt": {
-          type: "file",
-          content:
-`Art Statement
-
-I want to make worlds where computation, memory, grief,
-language, and beauty become visible systems.
-
-My art interests include:
-- character design
-- 3D modeling
-- worldbuilding
-- game environments
-- emotional systems`
-        },
-
-        "four-days-world.txt": {
-          type: "file",
-          content:
-`Four Days Worldbuilding
-
-Themes:
-- memory as storage
-- grief as recursion
-- identity as a pointer
-- forgotten things as garbage collection
-- gods as system processes
-- reality as a compiled artifact`
-        }
-      }
-    },
-
-    contact: {
-      type: "dir",
-      children: {
-        "links.txt": {
-          type: "file",
-          content:
-`Contact
-
-Email: your-email@example.com
-GitHub: github.com/yourusername
-LinkedIn: linkedin.com/in/yourusername`
-        }
-      }
+Useful commands:
+  ls
+  cd journal
+  cd projects
+  cd projects/ocaml-parser
+  cd projects/ocaml-parser/lexicon
+  cat projects/ocaml-parser/source/parser.ml
+  cat os-release
+  parse "the man saw the boy with the telescope"`
     }
   }
 };
+
+async function loadJournalFiles() {
+  const journalDir = fileSystem.children.journal;
+
+  if (!journalDir || journalDir.type !== "dir") {
+    return;
+  }
+
+  try {
+    const response = await fetch("journal/index.json", { cache: "no-store" });
+
+    if (!response.ok) {
+      journalDir.children = {};
+      return;
+    }
+
+    const entries = await response.json();
+    const children = {};
+
+    for (const entry of entries) {
+      if (!entry || !entry.name) continue;
+
+      children[entry.name] = {
+        type: "file",
+        staticPath: entry.path || `journal/${entry.name}`
+      };
+    }
+
+    journalDir.children = children;
+  } catch (error) {
+    journalDir.children = {};
+  }
+}
 
 function focusTerminal() {
   input.focus();
@@ -316,6 +348,8 @@ rfetch  Shows system information
 ls      List directory contents
 cat     Prints contents of files
 cd      Changes directory
+pwd     Prints current directory
+clear   Clears the terminal
 parse   Generates syntax trees for a sentence
 help    Display this help message`
   );
@@ -343,7 +377,7 @@ function ls(args) {
 
   const names = Object.entries(node.children).map(([name, child]) => {
     if (child.type === "dir") {
-      return `<span class="terminal-dir">${escapeHTML(name)}/</span>`;
+      return `<span class="terminal-dir">${escapeHTML(name)}</span>`;
     }
 
     return `<span class="terminal-file">${escapeHTML(name)}</span>`;
@@ -396,7 +430,7 @@ async function cat(args) {
 
   if (node.staticPath) {
     try {
-      const response = await fetch(node.staticPath);
+      const response = await fetch(node.staticPath, { cache: "no-store" });
 
       if (!response.ok) {
         print(`cat: could not read ${path}`);
@@ -466,7 +500,7 @@ Parser module not loaded yet.
 
 Right now, this website can read the OCaml source with:
 
-  cat source/parser.ml
+  cat projects/ocaml-parser/source/parser.ml
 
 But the parse command cannot execute the OCaml parser until the parser is compiled
 into browser JavaScript and exposes:
@@ -523,14 +557,6 @@ async function runCommand(line) {
       }
       break;
 
-    case "about":
-    case "projects":
-    case "research":
-    case "art":
-    case "contact":
-      scrollToSection(command);
-      break;
-
     default:
       print(`${command}: command not found`);
       break;
@@ -582,5 +608,10 @@ input.addEventListener("keydown", event => {
 
 terminalScreen.addEventListener("click", focusTerminal);
 
-renderSplash();
-focusTerminal();
+async function initTerminal() {
+  await loadJournalFiles();
+  renderSplash();
+  focusTerminal();
+}
+
+initTerminal();
