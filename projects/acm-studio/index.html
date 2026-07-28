@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>ACM Studio | Catherine "Rynn" Di</title>
+
+  <!-- Shared portfolio styles -->
+  <link rel="stylesheet" href="../../style.css?v=1003" />
+
+  <!-- ACM Studio page styles -->
+  <link rel="stylesheet" href="./acm-studio.css?v=5" />
+</head>
+
+<body class="studio-body">
+  <header class="topbar">
+    <a
+      class="site-logo"
+      href="../../index.html"
+      aria-label="Return to homepage"
+    >
+      R
+    </a>
+
+    <nav class="topnav">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#projects">Projects</a>
+      <a href="../../index.html#art">Gallery</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="studio-page">
+      <a
+      class="studio-back"
+      href="../../index.html#projects"
+      aria-label="Return to homepage">
+      ← Homepage
+     </a>
+
+    <section class="studio-hero">
+      <!-- ============================================
+           LEFT SIDE: PROJECT INFORMATION
+           ============================================ -->
+
+      <div class="studio-hero-copy">
+        <p class="studio-eyebrow">
+          October 2022 – June 2026 · UCLA
+        </p>
+
+        <div class="studio-title-row">
+          <h1>ACM Studio</h1>
+
+          <a
+            class="studio-itch-link"
+            href="https://rynndi.itch.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            My itch.io ↗
+          </a>
+        </div>
+
+        <p class="studio-role">
+          Marketing and Engagement Chair · Creative Director ·
+          Web Developer · Game Designer
+        </p>
+
+        <p class="studio-introduction">
+          I helped lead UCLA's interdisciplinary game-development
+          community across programming, art, design, narrative, and
+          production. I inspired and motivated those around me to create,
+          and unify art with code, and to never be afraid of learning something 
+          new, even if it seems hard, even if it's scary, because game design is worth it.
+        </p>
+      </div>
+
+      <!-- ============================================
+           RIGHT SIDE: PHOTO CAROUSEL
+           ============================================ -->
+
+      <section
+        class="studio-carousel"
+        tabindex="0"
+        aria-label="ACM Studio photo gallery. Use the arrow keys to navigate."
+      >
+        <div class="studio-carousel-main">
+          <!-- Clicking the large image opens the original file. -->
+          <a
+            id="studio-carousel-link"
+            class="studio-carousel-image-link"
+            href="../../images/studio/1.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the current photograph at full size"
+          >
+            <img
+              id="studio-carousel-image"
+              src="../../images/studio/1.png"
+              alt="ACM Studio community photograph 1"
+            />
+          </a>
+
+          <button
+            id="studio-carousel-previous"
+            class="studio-carousel-arrow studio-carousel-arrow-left"
+            type="button"
+            aria-label="Show the previous photograph"
+          >
+            ←
+          </button>
+
+          <button
+            id="studio-carousel-next"
+            class="studio-carousel-arrow studio-carousel-arrow-right"
+            type="button"
+            aria-label="Show the next photograph"
+          >
+            →
+          </button>
+
+          <p
+            id="studio-carousel-counter"
+            class="studio-carousel-counter"
+            aria-live="polite"
+          >
+            01 / 12
+          </p>
+        </div>
+
+        <!-- JavaScript creates the clickable thumbnails here. -->
+        <div
+          id="studio-carousel-thumbnails"
+          class="studio-carousel-thumbnails"
+          aria-label="Choose a Studio photograph"
+        ></div>
+
+        <p
+          id="studio-carousel-caption"
+          class="studio-carousel-caption"
+        >
+          ACM Studio community photograph.
+        </p>
+      </section>
+    </section>
+    <!-- ==================================================
+     CHRONOLOGICAL STUDIO TIMELINE
+     ================================================== -->
+
+<section
+  class="studio-timeline-section"
+  aria-labelledby="studio-timeline-heading"
+>
+  <header class="studio-timeline-header">
+    <p class="studio-timeline-eyebrow">
+      2022–2026
+    </p>
+
+    <h2 id="studio-timeline-heading">
+      My Journey Through Studio
+    </h2>
+
+    <p>
+      I entered ACM Studio without knowing how to program. Over the next
+      four years, I learned how to build games, create interfaces, lead
+      teams, teach new members, and help shape the community that first
+      welcomed me.
+    </p>
+  </header>
+
+  <div class="studio-timeline">
+    <!-- ==================================================
+         FALL 2022
+         ================================================== -->
+
+    <article
+      id="fall-2022"
+      class="studio-timeline-entry"
+    >
+      <div class="studio-timeline-date">
+        <p>Fall</p>
+        <strong>2022</strong>
+      </div>
+
+      <div class="studio-timeline-content">
+        <p class="studio-timeline-label">
+          The Beginning
+        </p>
+
+        <h3>Joining Studio With No Programming Experience</h3>
+
+        <p>
+          I joined ACM Studio during my first quarter at UCLA. At the
+          time, I had no programming knowledge. I simply wanted to find
+          a relaxed club where I could meet other people who loved art,
+          games, and creative projects.
+        </p>
+
+        <p>
+          I entered my first game jam, Ludum Dare 53, and designed a cute
+          two-dimensional platformer with my teammates. The game followed
+          a mischievous cat trying to avoid the flash of a camera.
+        </p>
+
+        <p>
+          It was my first experience creating something under intense
+          time pressure. We did not finish the game, but I had so much
+          fun that I spent the rest of the year learning functions,
+          loops, conditionals, and the basic structure of programs.
+        </p>
+
+        <div class="studio-era-gallery studio-era-gallery-two">
+          <figure>
+            <img
+              src="../../images/studio/LD532022.png"
+              alt="Early artwork or development material from the Ludum Dare 53 project"
+              loading="lazy"
+            />
+
+            <figcaption>
+              My first game jam project.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/LD53.png"
+              alt="Ludum Dare 53 cat platformer project"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Ludum Dare 53: a mischievous cat avoiding a camera.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- ==================================================
+         SPRING 2023
+         ================================================== -->
+
+    <article
+      id="spring-2023"
+      class="studio-timeline-entry"
+    >
+      <div class="studio-timeline-date">
+        <p>Spring</p>
+        <strong>2023</strong>
+      </div>
+
+      <div class="studio-timeline-content">
+        <p class="studio-timeline-label">
+          First Finished Game
+        </p>
+
+        <h3>Off My Paw-perty</h3>
+
+        <p>
+          When Ludum Dare 54 arrived, I joined another team as an
+          opportunity to learn new skills and make new friends. I was
+          still not proficient in programming, but I began learning Git,
+          version control, and how to import and implement original
+          sprites in a game.
+        </p>
+
+        <p>
+          We reused the same mischievous cat from my first jam, but this
+          time we completed and released a more polished game. Our team
+          won UCLA's Ludum Dare 54 event that quarter.
+        </p>
+
+        <a
+          class="studio-external-link"
+          href="https://nicholas-callen.itch.io/off-my-paw-perty"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Play Off My Paw-perty on itch.io →
+        </a>
+
+        <div class="studio-era-gallery studio-era-gallery-two">
+          <figure>
+            <img
+              src="../../images/studio/off-my-pawperty.png"
+              alt="Off My Paw-perty game artwork"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Off My Paw-perty, our completed Ludum Dare game.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/off-my-pawperty2.png"
+              alt="Gameplay or promotional artwork from Off My Paw-perty"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Reusing the cat character from my first game jam.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- ==================================================
+         FALL 2023 – SPRING 2024
+         ================================================== -->
+
+    <article
+      id="2023-2024"
+      class="studio-timeline-entry"
+    >
+      <div class="studio-timeline-date">
+        <p>Fall 2023</p>
+        <strong>–</strong>
+        <p>Spring 2024</p>
+      </div>
+
+      <div class="studio-timeline-content">
+        <p class="studio-timeline-label">
+          Long-Term Development
+        </p>
+
+        <h3>Villainess Reborn</h3>
+
+        <p>
+          After participating in several small game jams, I wanted to
+          work on something with enough time to be completed and
+          polished. I joined a team of visual-novel enthusiasts creating
+          a story about a villainess and a heroine.
+        </p>
+
+        <p>
+          The game was developed in Godot. I contributed cover artwork,
+          character concepts, sketches, and CG illustrations. By the end
+          of the year, the game had received more than 3,000 downloads
+          on itch.io—not bad at all for a college game.
+        </p>
+        <a
+          class="studio-external-link"
+          href="https://eigenstuffs.itch.io/villainess-x-reborn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Play Villainess × Reborn on itch.io →
+        </a>
+
+        <div class="studio-era-gallery studio-era-gallery-two">
+          <figure>
+            <img
+              src="../../images/studio/villainess2024.png"
+              alt="Promotional artwork for the Villainess visual novel"
+              loading="lazy"
+            />
+
+            <figcaption>
+              The finished Villainess project and release presentation.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/villainessConceptArt.png"
+              alt="Concept artwork created for the Villainess visual novel"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Character and visual-development concepts.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- ==================================================
+         FALL 2024
+         ================================================== -->
+
+    <article
+      id="fall-2024"
+      class="studio-timeline-entry"
+    >
+      <div class="studio-timeline-date">
+        <p>Fall</p>
+        <strong>2024</strong>
+      </div>
+
+      <div class="studio-timeline-content">
+        <p class="studio-timeline-label">
+          From Member to Intern
+        </p>
+
+        <h3>Designing and Developing the Studio Website</h3>
+
+        <p>
+          This was the quarter when I decided to become more involved in
+          the organization and applied to be an intern. Every intern had
+          to complete a project before becoming an officer, so I chose
+          to contribute to Studio's website and user-interface design.
+        </p>
+
+        <p>
+          I learned Figma while creating the adorable axolotl designs
+          associated with the club. Under the guidance of a senior
+          officer, I also helped implement the ACM Studio website using
+          Next.js, TypeScript, Material UI, and the Notion API.
+        </p>
+
+        <p>
+          Notion served as the website's database, but retrieving its
+          content could be slow. My mentor taught me how static generation
+          could improve loading performance. I also learned CSS animation
+          and adapted to TypeScript's strict static type system on top of
+          JavaScript's more dynamic behavior.
+        </p>
+
+        <div class="studio-era-gallery studio-era-gallery-three">
+          <figure>
+            <img
+              src="../../images/studio/internProject.png"
+              alt="ACM Studio intern website project"
+              loading="lazy"
+            />
+
+            <figcaption>
+              My Studio intern project.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/figma1.png"
+              alt="Figma interface designs for ACM Studio"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Early interface and visual-design work in Figma.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/figma2.png"
+              alt="Additional Figma designs for the ACM Studio website"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Iterating on the Studio website's presentation.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- ==================================================
+         SPRING 2025
+         ================================================== -->
+
+    <article
+      id="spring-2025"
+      class="studio-timeline-entry"
+    >
+      <div class="studio-timeline-date">
+        <p>Spring</p>
+        <strong>2025</strong>
+      </div>
+
+      <div class="studio-timeline-content">
+        <p class="studio-timeline-label">
+          Leadership
+        </p>
+
+        <h3>Marketing and Engagement Chair</h3>
+
+        <p>
+          After the interns became officers, the previous chairs prepared
+          to pass their responsibilities to a new generation. Because of
+          my work on the Studio website, I was elected Marketing and
+          Engagement Chair.
+        </p>
+
+        <p>
+          We taught twice-weekly workshops covering design,
+          implementation, iteration, and game-production skills. We also
+          organized events and socials for the community.
+        </p>
+
+        <p>
+          Serving as chair was rewarding, but it also brought real
+          responsibility. We had to prepare the next intern cohort and
+          teach them the same tools, practices, and lessons that our
+          mentors had once taught us.
+        </p>
+
+        <div class="studio-era-gallery studio-era-gallery-three">
+          <figure>
+            <img
+              src="../../images/studio/2.png"
+              alt="ACM Studio members participating in a club meeting"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Studio meetings and officer collaboration.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/6.png"
+              alt="Students attending an ACM Studio workshop"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Teaching game-development workshops.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/7.png"
+              alt="An ACM Studio presentation in a UCLA classroom"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Presenting design and development material.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- ==================================================
+         2026
+         ================================================== -->
+
+    <article
+      id="2026"
+      class="studio-timeline-entry"
+    >
+      <div class="studio-timeline-date">
+        <strong>2026</strong>
+      </div>
+
+      <div class="studio-timeline-content">
+        <p class="studio-timeline-label">
+          Creative Direction
+        </p>
+
+        <h3>Original Worlds and Fiat Ludum</h3>
+
+        <p>
+          After our interns became officers and the previous chairs
+          transitioned out of leadership, I had more time to return to
+          game jams and personal creative work.
+        </p>
+
+        <p>
+          Together with a talented artist friend and former intern, I
+          developed concept art and worldbuilding for a story I have
+          been writing since I was very young. Although the full game
+          was never implemented, the team meetings were joyful, and the
+          resulting concept artwork was extraordinary.
+        </p>
+
+        <p>
+          We also participated in Fiat Ludum, UCLA's largest game jam.
+          My team won Best Gameplay. It was one of the most satisfying
+          and fulfilling conclusions possible to my years in Studio.
+        </p>
+
+        <div class="studio-era-gallery studio-era-gallery-concepts">
+          <figure>
+            <img
+              src="../../images/studio/chelleconcept.png"
+              alt="Character concept art for an original game project"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Character concept artwork.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/mriconcept.png"
+              alt="MRI environment concept for an original game"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Environmental and machine concept design.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/droneconcept.png"
+              alt="Drone concept art for an original game project"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Drone visual development.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/crabbot.png"
+              alt="Crab robot concept art for an original game project"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Creature and robot exploration.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/earlymrimockup.png"
+              alt="Early MRI gameplay environment mockup"
+              loading="lazy"
+            />
+
+            <figcaption>
+              An early game-environment mockup.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../images/studio/floor-plan.jpg"
+              alt="Floor plan for an original game environment"
+              loading="lazy"
+            />
+
+            <figcaption>
+              Level and environment planning.
+            </figcaption>
+          </figure>
+       
+      </div>
+    </article>
+  </div>
+</section>
+  </main>
+
+  <script>
+    /*
+     * All images currently stored in:
+     * images/studio/
+     *
+     * File names and capitalization must match exactly.
+     */
+    const studioImages = [
+      {
+        src: "../../images/studio/1.png",
+        alt: "ACM Studio community photograph 1",
+        caption: "The Studio board of directors, 2025.",
+      },
+      {
+        src: "../../images/studio/2.png",
+        alt: "ACM Studio community photograph 2",
+        caption: "Hosting the fall general meeting in the Engineering Building.",
+      },
+      {
+        src: "../../images/studio/3.png",
+        alt: "ACM Studio community photograph 3",
+        caption: "Group photo from all hands.",
+      },
+      {
+        src: "../../images/studio/4.png",
+        alt: "ACM Studio community photograph 4",
+        caption: "Promoting our club at the engineering fair. Thousands of people!.",
+      },
+      {
+        src: "../../images/studio/5.png",
+        alt: "ACM Studio community photograph 5",
+        caption: "Me giving a presentation at the fall GM.",
+      },
+      {
+        src: "../../images/studio/6.png",
+        alt: "ACM Studio community photograph 6",
+        caption: "Having goofy fun with my friends",
+      },
+      {
+        src: "../../images/studio/7.png",
+        alt: "ACM Studio community photograph 7",
+        caption: "Discussion of our speaker series, where industry professionals share their experiences.",
+      },
+      {
+        src: "../../images/studio/8.png",
+        alt: "ACM Studio community photograph 8",
+        caption: "Club paid for a trip to six flags! Some of the alumni attended. Pretty much everyone here already graduated.",
+      },
+      {
+        src: "../../images/studio/9.png",
+        alt: "ACM Studio community photograph 9",
+        caption: "Another shot of the engineering fair at UCLA. You can see me handing out flyers.",
+      },
+      {
+        src: "../../images/studio/10.png",
+        alt: "ACM Studio community photograph 10",
+        caption: "Another six flags photo because it was so awesome.",
+      },
+      {
+        /*
+         * This file uses an uppercase JPG extension.
+         * GitHub Pages treats 11.JPG and 11.jpg as different files.
+         */
+        src: "../../images/studio/11.JPG",
+        alt: "ACM Studio artwork",
+        caption: "@zestymachine, my former intern, made an awesome design for the 2026 ACM Studio Logo! Studio always has the best drip",
+      },
+      {
+        src: "../../images/studio/studio.png",
+        alt: "ACM Studio controller artwork",
+        caption: "ACM Studio controller keychain given to the board. ACM at UCLA has 10 different groups: cyber, ICPC, ai, and Studio has the best swag!",
+      },
+    ];
+
+    const carousel = document.querySelector(".studio-carousel");
+
+    const carouselImage = document.querySelector(
+      "#studio-carousel-image"
+    );
+
+    const carouselLink = document.querySelector(
+      "#studio-carousel-link"
+    );
+
+    const carouselCounter = document.querySelector(
+      "#studio-carousel-counter"
+    );
+
+    const carouselCaption = document.querySelector(
+      "#studio-carousel-caption"
+    );
+
+    const thumbnailsContainer = document.querySelector(
+      "#studio-carousel-thumbnails"
+    );
+
+    const previousButton = document.querySelector(
+      "#studio-carousel-previous"
+    );
+
+    const nextButton = document.querySelector(
+      "#studio-carousel-next"
+    );
+
+    let currentImageIndex = 0;
+    let pointerStartX = null;
+
+    /*
+     * Create one clickable thumbnail for every image.
+     */
+    studioImages.forEach((image, index) => {
+      const button = document.createElement("button");
+      const thumbnail = document.createElement("img");
+
+      button.className = "studio-carousel-thumbnail";
+      button.type = "button";
+      button.dataset.imageIndex = index;
+
+      button.setAttribute(
+        "aria-label",
+        `Show Studio photograph ${index + 1}`
+      );
+
+      button.setAttribute(
+        "aria-current",
+        String(index === 0)
+      );
+
+      thumbnail.src = image.src;
+      thumbnail.alt = "";
+      thumbnail.loading = "lazy";
+
+      button.appendChild(thumbnail);
+
+      button.addEventListener("click", () => {
+        showStudioImage(index, true);
+      });
+
+      thumbnailsContainer.appendChild(button);
+    });
+
+    /*
+     * Change the large image and all related information.
+     */
+    function showStudioImage(index, scrollThumbnail = true) {
+      currentImageIndex =
+        (index + studioImages.length) % studioImages.length;
+
+      const selectedImage = studioImages[currentImageIndex];
+
+      carouselImage.classList.add("is-changing");
+
+      window.setTimeout(() => {
+        carouselImage.src = selectedImage.src;
+        carouselImage.alt = selectedImage.alt;
+
+        carouselLink.href = selectedImage.src;
+
+        carouselCaption.textContent =
+          selectedImage.caption;
+
+        carouselCounter.textContent =
+          `${String(currentImageIndex + 1).padStart(2, "0")} / ` +
+          `${String(studioImages.length).padStart(2, "0")}`;
+
+        carouselImage.classList.remove("is-changing");
+      }, 110);
+
+      const thumbnailButtons =
+        thumbnailsContainer.querySelectorAll(
+          ".studio-carousel-thumbnail"
+        );
+
+      thumbnailButtons.forEach((button, thumbnailIndex) => {
+        const isSelected =
+          thumbnailIndex === currentImageIndex;
+
+        button.setAttribute(
+          "aria-current",
+          String(isSelected)
+        );
+
+        if (isSelected && scrollThumbnail) {
+          button.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
+      });
+    }
+
+    previousButton.addEventListener("click", () => {
+      showStudioImage(currentImageIndex - 1);
+    });
+
+    nextButton.addEventListener("click", () => {
+      showStudioImage(currentImageIndex + 1);
+    });
+
+    /*
+     * Keyboard navigation.
+     */
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showStudioImage(currentImageIndex - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showStudioImage(currentImageIndex + 1);
+      }
+    });
+
+    /*
+     * Mouse and touchscreen swipe navigation.
+     */
+    carousel.addEventListener("pointerdown", (event) => {
+      pointerStartX = event.clientX;
+    });
+
+    carousel.addEventListener("pointerup", (event) => {
+      if (pointerStartX === null) {
+        return;
+      }
+
+      const distance = event.clientX - pointerStartX;
+
+      pointerStartX = null;
+
+      if (Math.abs(distance) < 45) {
+        return;
+      }
+
+      if (distance < 0) {
+        showStudioImage(currentImageIndex + 1);
+      } else {
+        showStudioImage(currentImageIndex - 1);
+      }
+    });
+
+    /*
+     * Set the initial image without scrolling the page.
+     */
+    showStudioImage(0, false);
+  </script>
+</body>
+</html>

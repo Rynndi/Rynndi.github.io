@@ -1,0 +1,1028 @@
+/* ==================================================
+   ACM STUDIO PROJECT PAGE
+   ================================================== */
+
+.studio-body {
+  --studio-background: #050607;
+  --studio-panel: #090c0a;
+
+  --studio-text: #f6f6f6;
+  --studio-muted: #adb3af;
+
+  --studio-green: #83c98a;
+  --studio-green-dark: #247a32;
+
+  --studio-pink: #ff89aa;
+
+  margin: 0;
+
+  background: var(--studio-background);
+  color: var(--studio-text);
+}
+
+
+/* ==================================================
+   PAGE LAYOUT
+   ================================================== */
+
+.studio-page {
+  width: min(1320px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 3rem 0 8rem;
+}
+
+
+/* ==================================================
+   HOMEPAGE LINK
+   ================================================== */
+
+.studio-back {
+  display: inline-block;
+  margin-bottom: 2rem;
+
+  color: var(--studio-green);
+
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.studio-back:hover {
+  color: var(--studio-pink);
+  transform: translateX(-3px);
+}
+
+.studio-back:focus-visible {
+  outline: 2px solid var(--studio-green);
+  outline-offset: 5px;
+}
+
+
+/* ==================================================
+   HERO LAYOUT
+   ================================================== */
+
+.studio-hero {
+  min-height: calc(100vh - 180px);
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(430px, 1.1fr);
+
+  align-items: center;
+  gap: clamp(3rem, 6vw, 6rem);
+
+  padding: 2rem 0 6rem;
+}
+
+.studio-hero-copy {
+  min-width: 0;
+  max-width: 650px;
+}
+
+
+/* ==================================================
+   HERO TEXT
+   ================================================== */
+
+.studio-eyebrow {
+  margin: 0 0 1.2rem;
+
+  color: var(--studio-pink);
+
+  font-family: "Courier New", monospace;
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.studio-hero h1 {
+  margin: 0;
+
+  color: var(--studio-text);
+
+  font-family: "Courier New", monospace;
+  font-size: clamp(3.8rem, 5.6vw, 5.6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.075em;
+
+  white-space: nowrap;
+}
+
+.studio-role {
+  max-width: 650px;
+  margin: 2rem 0 0;
+
+  color: var(--studio-green);
+
+  font-family: "Courier New", monospace;
+  font-size: clamp(0.88rem, 1.35vw, 1.08rem);
+  font-weight: 900;
+  line-height: 1.65;
+}
+
+.studio-introduction {
+  max-width: 620px;
+  margin: 1.7rem 0 0;
+
+  color: var(--studio-muted);
+
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  line-height: 1.8;
+}
+
+
+/* ==================================================
+   PHOTO CAROUSEL
+   ================================================== */
+
+.studio-carousel {
+  min-width: 0;
+  padding: 0.7rem;
+
+  background: var(--studio-panel);
+
+  border: 2px solid var(--studio-green-dark);
+  border-radius: 4px;
+
+  box-shadow:
+    3px 0 0 rgba(0, 255, 136, 0.14),
+    -3px 0 0 rgba(0, 207, 255, 0.1),
+    0 0 18px rgba(57, 255, 20, 0.1);
+
+  touch-action: pan-y;
+}
+
+.studio-carousel:focus-visible {
+  outline: 3px solid var(--studio-pink);
+  outline-offset: 5px;
+}
+
+
+/* ==================================================
+   LARGE CAROUSEL IMAGE
+   ================================================== */
+
+.studio-carousel-main {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  background: #000000;
+
+  border: 1px solid var(--studio-green-dark);
+}
+
+.studio-carousel-image-link {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: zoom-in;
+}
+
+.studio-carousel-image-link:focus-visible {
+  outline: 3px solid var(--studio-pink);
+  outline-offset: -5px;
+}
+
+#studio-carousel-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /*
+   * "contain" prevents portrait and landscape photos
+   * from being cut off.
+   */
+  object-fit: contain;
+  object-position: center;
+
+  filter:
+    brightness(0.82)
+    contrast(1.04)
+    saturate(0.86);
+
+  opacity: 1;
+  transform: scale(1);
+
+  transition:
+    opacity 110ms ease,
+    transform 260ms ease,
+    filter 200ms ease;
+}
+
+#studio-carousel-image.is-changing {
+  opacity: 0;
+  transform: scale(1.012);
+}
+
+.studio-carousel:hover #studio-carousel-image {
+  filter:
+    brightness(0.94)
+    contrast(1.02)
+    saturate(0.72)
+    grayscale(0.06);
+}
+
+
+/* Subtle tint over the photograph */
+
+.studio-carousel-main::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      rgba(0, 10, 4, 0.02),
+      rgba(0, 0, 0, 0.08)
+    );
+
+  pointer-events: none;
+}
+
+
+/* ==================================================
+   PREVIOUS AND NEXT BUTTONS
+   ================================================== */
+
+.studio-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+
+  width: 46px;
+  height: 46px;
+  padding: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--studio-text);
+  background: rgba(0, 0, 0, 0.76);
+
+  border: 1px solid rgba(131, 201, 138, 0.8);
+  border-radius: 50%;
+
+  font-family: "Courier New", monospace;
+  font-size: 1.15rem;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  opacity: 0.75;
+  transform: translateY(-50%);
+
+  transition:
+    opacity 160ms ease,
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.studio-carousel:hover .studio-carousel-arrow {
+  opacity: 1;
+}
+
+.studio-carousel-arrow:hover {
+  color: #020704;
+  background: var(--studio-green);
+
+  border-color: var(--studio-green);
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.studio-carousel-arrow:focus-visible {
+  opacity: 1;
+  outline: 3px solid var(--studio-pink);
+  outline-offset: 3px;
+}
+
+.studio-carousel-arrow-left {
+  left: 1rem;
+}
+
+.studio-carousel-arrow-right {
+  right: 1rem;
+}
+
+
+/* ==================================================
+   IMAGE COUNTER
+   ================================================== */
+
+.studio-carousel-counter {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.7rem;
+  z-index: 3;
+
+  margin: 0;
+  padding: 0.35rem 0.55rem;
+
+  color: var(--studio-green);
+  background: rgba(0, 0, 0, 0.82);
+
+  border: 1px solid var(--studio-green-dark);
+
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+
+/* ==================================================
+   CLICKABLE THUMBNAILS
+   ================================================== */
+
+.studio-carousel-thumbnails {
+  display: flex;
+  gap: 0.55rem;
+
+  margin-top: 0.7rem;
+  padding: 0.15rem 0 0.4rem;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+
+  scrollbar-color:
+    var(--studio-green-dark)
+    var(--studio-panel);
+
+  scrollbar-width: thin;
+}
+
+.studio-carousel-thumbnails::-webkit-scrollbar {
+  height: 8px;
+}
+
+.studio-carousel-thumbnails::-webkit-scrollbar-track {
+  background: var(--studio-panel);
+}
+
+.studio-carousel-thumbnails::-webkit-scrollbar-thumb {
+  background: var(--studio-green-dark);
+}
+
+.studio-carousel-thumbnail {
+  flex: 0 0 76px;
+
+  width: 76px;
+  height: 57px;
+  padding: 0;
+
+  overflow: hidden;
+
+  background: #000000;
+
+  border: 2px solid transparent;
+  border-radius: 2px;
+
+  cursor: pointer;
+  opacity: 0.48;
+
+  transition:
+    opacity 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.studio-carousel-thumbnail img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter:
+    brightness(0.72)
+    saturate(0.72);
+}
+
+.studio-carousel-thumbnail:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.studio-carousel-thumbnail[aria-current="true"] {
+  opacity: 1;
+  border-color: var(--studio-pink);
+}
+
+.studio-carousel-thumbnail:focus-visible {
+  opacity: 1;
+
+  outline: 2px solid var(--studio-green);
+  outline-offset: 2px;
+}
+
+
+/* ==================================================
+   IMAGE CAPTION
+   ================================================== */
+
+.studio-carousel-caption {
+  min-height: 1.5em;
+  margin: 0.55rem 0 0.05rem;
+
+  color: var(--studio-muted);
+
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 1050px) {
+  .studio-hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 3.5rem;
+
+    padding-top: 3rem;
+  }
+
+  .studio-hero-copy {
+    max-width: 850px;
+  }
+
+  .studio-hero h1 {
+    white-space: normal;
+  }
+
+  .studio-carousel {
+    width: 100%;
+    max-width: 760px;
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 650px) {
+  .studio-page {
+    width: calc(100% - 1.5rem);
+    padding: 2rem 0 5rem;
+  }
+
+  .studio-back {
+    margin-bottom: 1.5rem;
+  }
+
+  .studio-hero {
+    gap: 2.5rem;
+    padding: 1.5rem 0 4rem;
+  }
+
+  .studio-hero h1 {
+    font-size: clamp(3.2rem, 17vw, 5rem);
+  }
+
+  .studio-carousel {
+    padding: 0.45rem;
+  }
+
+  .studio-carousel-main {
+    aspect-ratio: 4 / 3;
+  }
+
+  .studio-carousel-arrow {
+    width: 40px;
+    height: 40px;
+
+    opacity: 1;
+
+    font-size: 1rem;
+  }
+
+  .studio-carousel-arrow-left {
+    left: 0.6rem;
+  }
+
+  .studio-carousel-arrow-right {
+    right: 0.6rem;
+  }
+
+  .studio-carousel-thumbnail {
+    flex-basis: 64px;
+
+    width: 64px;
+    height: 48px;
+  }
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-back,
+  #studio-carousel-image,
+  .studio-carousel-arrow,
+  .studio-carousel-thumbnail {
+    transition: none;
+  }
+
+  #studio-carousel-image.is-changing {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==================================================
+   CHRONOLOGICAL TIMELINE
+   ================================================== */
+
+.studio-timeline-section {
+  padding: 7rem 0 4rem;
+  border-top: 2px solid var(--studio-green-dark);
+}
+
+.studio-timeline-header {
+  max-width: 900px;
+  margin-bottom: 6rem;
+}
+
+.studio-timeline-eyebrow {
+  margin: 0 0 1rem;
+
+  color: var(--studio-pink);
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+}
+
+.studio-timeline-header h2 {
+  margin: 0;
+
+  color: var(--studio-text);
+  font-family: "Courier New", monospace;
+  font-size: clamp(2.8rem, 6vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.studio-timeline-header > p:last-child {
+  max-width: 760px;
+  margin: 2rem 0 0;
+
+  color: var(--studio-muted);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.85;
+}
+
+
+/* ==================================================
+   TIMELINE LINE AND ENTRIES
+   ================================================== */
+
+.studio-timeline {
+  position: relative;
+}
+
+.studio-timeline::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 139px;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--studio-green),
+      var(--studio-green-dark) 85%,
+      transparent
+    );
+}
+
+.studio-timeline-entry {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+
+  padding: 0 0 8rem;
+}
+
+.studio-timeline-entry::before {
+  content: "";
+
+  position: absolute;
+  top: 0.4rem;
+  left: 132px;
+  z-index: 2;
+
+  width: 16px;
+  height: 16px;
+
+  background: var(--studio-background);
+  border: 3px solid var(--studio-green);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 5px var(--studio-background),
+    0 0 14px rgba(131, 201, 138, 0.32);
+}
+
+
+/* ==================================================
+   DATES
+   ================================================== */
+
+.studio-timeline-date {
+  padding-right: 2rem;
+  text-align: right;
+}
+
+.studio-timeline-date p {
+  margin: 0;
+
+  color: var(--studio-pink);
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.studio-timeline-date strong {
+  display: block;
+  margin: 0.15rem 0;
+
+  color: var(--studio-green);
+  font-family: "Courier New", monospace;
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+
+/* ==================================================
+   TIMELINE WRITING
+   ================================================== */
+
+.studio-timeline-content {
+  min-width: 0;
+  max-width: 980px;
+}
+
+.studio-timeline-label {
+  margin: 0 0 0.8rem;
+
+  color: var(--studio-pink);
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.studio-timeline-content h3 {
+  max-width: 850px;
+  margin: 0 0 1.6rem;
+
+  color: var(--studio-text);
+  font-family: "Courier New", monospace;
+  font-size: clamp(1.8rem, 3.6vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.studio-timeline-content > p:not(.studio-timeline-label) {
+  max-width: 800px;
+  margin: 0 0 1.2rem;
+
+  color: var(--studio-muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.studio-external-link {
+  display: inline-block;
+  margin: 0.5rem 0 2rem;
+  padding: 0.75rem 0.9rem;
+
+  color: var(--studio-background);
+  background: var(--studio-green);
+  border: 1px solid var(--studio-green);
+
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.studio-external-link:hover {
+  color: var(--studio-green);
+  background: transparent;
+  transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   ERA IMAGE GALLERIES
+   ================================================== */
+
+.studio-era-gallery {
+  display: grid;
+  gap: 1rem;
+
+  margin-top: 2.5rem;
+}
+
+.studio-era-gallery-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.studio-era-gallery-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.studio-era-gallery-concepts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.studio-era-gallery figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.studio-era-gallery img {
+  display: block;
+
+  width: 100%;
+  height: 250px;
+
+  object-fit: cover;
+  object-position: center;
+
+  background: #000000;
+  border: 1px solid var(--studio-green-dark);
+
+  filter:
+    brightness(0.82)
+    contrast(1.03)
+    saturate(0.82);
+
+  transition:
+    filter 200ms ease,
+    transform 200ms ease,
+    border-color 200ms ease;
+}
+
+.studio-era-gallery img:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--studio-green);
+
+  filter:
+    brightness(0.96)
+    contrast(1.02)
+    saturate(0.68)
+    grayscale(0.06);
+}
+
+.studio-era-gallery figcaption {
+  padding: 0.7rem 0.15rem 0;
+
+  color: var(--studio-muted);
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.studio-era-gallery-concepts img {
+  height: 220px;
+  object-fit: contain;
+}
+
+.studio-event-gallery {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--studio-green-dark);
+}
+
+
+/* ==================================================
+   TABLET TIMELINE
+   ================================================== */
+
+@media (max-width: 900px) {
+  .studio-timeline::before {
+    left: 99px;
+  }
+
+  .studio-timeline-entry {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+
+  .studio-timeline-entry::before {
+    left: 92px;
+  }
+
+  .studio-timeline-date {
+    padding-right: 1.4rem;
+  }
+
+  .studio-era-gallery-three,
+  .studio-era-gallery-concepts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* ==================================================
+   MOBILE TIMELINE
+   ================================================== */
+
+@media (max-width: 650px) {
+  .studio-timeline-section {
+    padding-top: 5rem;
+  }
+
+  .studio-timeline-header {
+    margin-bottom: 4rem;
+  }
+
+  .studio-timeline::before {
+    left: 7px;
+  }
+
+  .studio-timeline-entry {
+    display: block;
+    padding: 0 0 6rem 2rem;
+  }
+
+  .studio-timeline-entry::before {
+    top: 0.2rem;
+    left: 0;
+  }
+
+  .studio-timeline-date {
+    margin-bottom: 1rem;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .studio-timeline-date p,
+  .studio-timeline-date strong {
+    display: inline;
+    margin-right: 0.35rem;
+  }
+
+  .studio-era-gallery-two,
+  .studio-era-gallery-three,
+  .studio-era-gallery-concepts {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-era-gallery img,
+  .studio-era-gallery-concepts img {
+    height: auto;
+    max-height: 420px;
+  }
+}
+/* ==================================================
+   HOMEPAGE LINK
+   ================================================== */
+
+.studio-back {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 2rem;
+  padding: 0.75rem 1rem;
+
+  color: var(--studio-green);
+  background: rgba(131, 201, 138, 0.05);
+
+  border: 1px solid var(--studio-green-dark);
+
+  font-family: "Courier New", monospace;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.studio-back:hover {
+  color: var(--studio-background);
+  background: var(--studio-green);
+  border-color: var(--studio-green);
+
+  transform: translateX(-3px);
+}
+
+.studio-back:focus-visible {
+  outline: 3px solid var(--studio-pink);
+  outline-offset: 4px;
+}
+
+
+/* ==================================================
+   TITLE AND ITCH.IO LINK
+   ================================================== */
+
+.studio-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+}
+
+.studio-title-row h1 {
+  flex-shrink: 0;
+}
+
+.studio-itch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.7rem 0.9rem;
+
+  color: var(--studio-background);
+  background: var(--studio-pink);
+  border: 1px solid var(--studio-pink);
+
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.studio-itch-link:hover {
+  color: var(--studio-pink);
+  background: transparent;
+
+  transform: translateY(-2px);
+}
+
+.studio-itch-link:focus-visible {
+  outline: 3px solid var(--studio-green);
+  outline-offset: 4px;
+}

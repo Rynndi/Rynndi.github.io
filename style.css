@@ -1228,12 +1228,15 @@ body {
 
 
 /* ==================================================
-   ACM STUDIO IMAGE CARD
+   ACM STUDIO PROJECT CARD
    ================================================== */
 
 .projects-section .acm-studio-card {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
+
+  grid-column: 1 / -1;
 
   width: 100%;
   height: clamp(300px, 34vw, 400px);
@@ -1257,6 +1260,9 @@ body {
     box-shadow 180ms ease;
 }
 
+
+/* ACM Studio screenshot */
+
 .projects-section .acm-studio-card-image {
   width: 100%;
   height: 100%;
@@ -1266,8 +1272,39 @@ body {
   object-fit: cover;
   object-position: center;
 
-  transition: transform 400ms ease;
+  /*
+   * Darker by default.
+   */
+  filter:
+    brightness(0.58)
+    contrast(1.05)
+    saturate(0.82);
+
+  transition:
+    transform 400ms ease,
+    filter 250ms ease;
 }
+
+
+/* Subtle dark tint above the image */
+
+.acm-studio-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      rgba(0, 15, 7, 0.08),
+      rgba(0, 0, 0, 0.16)
+    );
+
+  pointer-events: none;
+}
+
+
+/* Hover state */
 
 .projects-section .acm-studio-card:hover {
   transform: translateY(-3px);
@@ -1282,7 +1319,19 @@ body {
 
 .projects-section .acm-studio-card:hover .acm-studio-card-image {
   transform: scale(1.018);
+
+  /*
+   * Slightly brighter, greyer, and less saturated on hover.
+   */
+  filter:
+    brightness(0.68)
+    contrast(1.04)
+    saturate(0.58)
+    grayscale(0.05);
 }
+
+
+/* Keyboard accessibility */
 
 .projects-section .acm-studio-card:focus-visible {
   outline: 3px solid #83c98a;
