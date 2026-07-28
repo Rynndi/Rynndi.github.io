@@ -171,33 +171,107 @@
         </div>
       </section>
 
-      <section id="projects" class="content-section">
-        <h2>Projects</h2>
 
-        <article class="project-card">
-          <h3>Four Days</h3>
-          <p>
-            A meta-narrative game about memory, recursion, source files, and
-            reality editing through a custom terminal-like interface.
-          </p>
-        </article>
 
-        <article class="project-card">
-          <h3>Mandarin Third Tone Sandhi Parser</h3>
-          <p>
-            An OCaml parser exploring syntax-prosody mapping and
-            constraint-based alternations in Mandarin third tone sandhi.
-          </p>
-        </article>
 
-        <article class="project-card">
-          <h3>Rynn-OS Interface</h3>
-          <p>
-            A fake OS / virtual filesystem prototype for navigating projects,
-            memories, source files, and worldbuilding fragments.
-          </p>
-        </article>
-      </section>
+
+
+
+
+
+
+      <!-- projects section -->
+       <!-- distributed server emulator project  -->
+       <section id="projects" class="content-section projects-section">
+          <h2>Projects</h2>
+
+          <div class="projects-grid">
+            <!-- Featured project: entire image card is clickable -->
+            <a
+              class="featured-project-card"
+              href="./projects/distributed-server/index.html"
+              aria-label="Open the Distributed Server Emulator project"
+            >
+              <!-- Terminal title bar -->
+              <div class="featured-project-titlebar">
+                <div class="featured-project-dots" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <span class="featured-project-window-title">
+                  distributed-server.exe
+                </span>
+              </div>
+
+              <!-- Project preview image -->
+              <div class="featured-project-screen">
+                <img
+                  class="featured-project-image"
+                  src="./images/projects/distSyst/distributed-server-card.png"
+                  alt="Illustrated distributed server control room"
+                />
+
+                <div class="featured-project-green-overlay" aria-hidden="true"></div>
+
+                <span class="featured-project-play" aria-hidden="true">
+                  <span>▶</span>
+                </span>
+              </div>
+
+              <!-- Brief description box -->
+              <div class="featured-project-info">
+                <div>
+                  <p class="featured-project-number">PROJECT 01: art by @zestymachine</p>
+
+                  <h3>Distributed Server Emulator</h3>
+
+                  <p>
+                    A Distributed Location five-node asynchronous TCP server network, told in the version of a game!
+                  </p>
+                </div>
+
+                <span class="featured-project-launch">
+                  Enter Simulation →
+                </span>
+              </div>
+            </a>
+
+
+
+            <!-- Existing projects -->
+            <article class="project-card">
+              <h3>Four Days</h3>
+
+              <p>
+                A meta-narrative game about memory, recursion, source files, and
+                reality editing through a custom terminal-like interface.
+              </p>
+            </article>
+
+            <article class="project-card">
+              <h3>Mandarin Third Tone Sandhi Parser</h3>
+
+              <p>
+                An OCaml parser exploring syntax-prosody mapping and
+                constraint-based alternations in Mandarin third tone sandhi.
+              </p>
+            </article>
+
+            <article class="project-card">
+              <h3>Rynn-OS Interface</h3>
+
+              <p>
+                A fake OS / virtual filesystem prototype for navigating projects,
+                memories, source files, and worldbuilding fragments.
+              </p>
+            </article>
+          </div>
+        </section>
+
+      
+      <!-- research section  -->
 
       <section id="research" class="content-section">
         <h2>Research</h2>
