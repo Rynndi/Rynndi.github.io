@@ -1026,3 +1026,46 @@
   outline: 3px solid var(--studio-green);
   outline-offset: 4px;
 }
+
+/* ==================================================
+   FIAT LUDUM SECTION
+   ================================================== */
+
+.studio-fiat-section {
+  margin-top: 5rem;
+  padding-top: 4rem;
+
+  border-top: 1px solid var(--studio-green-dark);
+}
+
+.studio-era-gallery-fiat {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  margin-top: 2.5rem;
+}
+
+.studio-era-gallery-fiat img {
+  width: 100%;
+  height: 340px;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #000000;
+}
+
+@media (max-width: 650px) {
+  .studio-fiat-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+  }
+
+  .studio-era-gallery-fiat {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-era-gallery-fiat img {
+    height: auto;
+    max-height: 460px;
+  }
+}
