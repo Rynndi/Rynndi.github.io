@@ -1176,3 +1176,131 @@ body {
     font-size: 0.58rem;
   }
 }
+
+/* ACM STUDIO PROJECT CARD
+   Same dimensions as the distributed server card, but displays only the website image.*/
+
+.acm-studio-card .featured-project-screen {
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Show the original image without the green CRT tint. */
+
+.projects-section .acm-studio-card .featured-project-image {
+  object-fit: cover;
+  object-position: center;
+
+  filter: none;
+}
+
+/* Remove the distributed-server scanlines. */
+
+.acm-studio-card .featured-project-screen::after {
+  display: none;
+}
+
+/* Preserve a subtle zoom without changing the image colors. */
+
+.projects-section .acm-studio-card:hover .featured-project-image {
+  transform: scale(1.018);
+  filter: none;
+}
+
+/* ==================================================
+   PROJECT GRID SPACING
+   ================================================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Both large featured projects span the full grid width. */
+
+.projects-grid > .featured-project-card,
+.projects-grid > .acm-studio-card {
+  grid-column: 1 / -1;
+}
+
+
+/* ==================================================
+   ACM STUDIO IMAGE CARD
+   ================================================== */
+
+.projects-section .acm-studio-card {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  height: clamp(300px, 34vw, 400px);
+
+  display: block;
+
+  background: #020704;
+  border: 2px solid #247a32;
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  box-shadow:
+    2px 0 0 rgba(0, 255, 136, 0.14),
+    -2px 0 0 rgba(0, 207, 255, 0.1),
+    0 0 10px rgba(57, 255, 20, 0.08);
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.projects-section .acm-studio-card-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 400ms ease;
+}
+
+.projects-section .acm-studio-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #83c98a;
+
+  box-shadow:
+    3px 0 0 rgba(0, 255, 136, 0.2),
+    -3px 0 0 rgba(0, 207, 255, 0.13),
+    0 0 18px rgba(57, 255, 20, 0.12);
+}
+
+.projects-section .acm-studio-card:hover .acm-studio-card-image {
+  transform: scale(1.018);
+}
+
+.projects-section .acm-studio-card:focus-visible {
+  outline: 3px solid #83c98a;
+  outline-offset: 5px;
+}
+
+
+/* ==================================================
+   MOBILE PROJECT GRID
+   ================================================== */
+
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .projects-section .acm-studio-card {
+    height: 300px;
+  }
+}
