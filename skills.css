@@ -1,0 +1,230 @@
+/* ==================================================
+   SKILLS + LOCALIZED TERMINAL CRT EFFECTS
+   ================================================== */
+
+
+/* =========================
+   SKILLS GRID
+   ========================= */
+
+#skills .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+
+  width: 100%;
+  margin-top: 28px;
+}
+
+
+/* =========================
+   SKILL CARDS
+   ========================= */
+
+#skills .skill-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 280px;
+  padding: 24px;
+
+  background: #020704;
+  border: 2px solid #247a32;
+  border-radius: 4px;
+
+  box-shadow:
+    2px 0 0 rgba(0, 255, 136, 0.14),
+    -2px 0 0 rgba(0, 207, 255, 0.1),
+    0 0 8px rgba(57, 255, 20, 0.07);
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+
+/* Keep all text above the effects */
+
+#skills .skill-card h3,
+#skills .skill-card ul {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Skill headings */
+
+#skills .skill-card h3 {
+  margin: 0 0 18px;
+
+  color: #83c98a;
+  font-family: "Courier New", monospace;
+  font-size: 1.35rem;
+  line-height: 1.2;
+
+  text-shadow:
+    1px 0 rgba(0, 207, 255, 0.16),
+    -1px 0 rgba(0, 255, 136, 0.16),
+    0 0 3px rgba(57, 255, 20, 0.16);
+}
+
+
+/* Skill lists */
+
+#skills .skill-card ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+#skills .skill-card li {
+  margin-bottom: 8px;
+
+  color: #b8d9ba;
+  font-family: "Courier New", monospace;
+  line-height: 1.4;
+
+  text-shadow:
+    0 0 2px rgba(57, 255, 20, 0.08);
+}
+
+
+/* =========================
+   CARD CRT EFFECTS
+   ========================= */
+
+/* Very faint scanlines */
+
+#skills .skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 5px,
+    rgba(57, 255, 20, 0.022) 5px,
+    rgba(57, 255, 20, 0.022) 6px
+  );
+
+  pointer-events: none;
+}
+
+
+/* Very faint center glow */
+
+#skills .skill-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(57, 255, 20, 0.025),
+    transparent 72%
+  );
+
+  pointer-events: none;
+}
+
+
+/* Slightly brighten a card on hover */
+
+#skills .skill-card:hover {
+  border-color: #319444;
+
+  box-shadow:
+    2px 0 0 rgba(0, 255, 136, 0.2),
+    -2px 0 0 rgba(0, 207, 255, 0.14),
+    0 0 10px rgba(57, 255, 20, 0.1);
+
+  animation: skill-card-glitch 220ms steps(2, end);
+}
+
+#skills .skill-card:hover h3 {
+  animation: skill-heading-glitch 180ms steps(2, end);
+}
+
+
+/* =========================
+   SKILL GLITCH ANIMATIONS
+   ========================= */
+
+@keyframes skill-card-glitch {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(-2px, 1px);
+  }
+
+  50% {
+    transform: translate(2px, -1px);
+  }
+
+  75% {
+    transform: translate(-1px, 0);
+  }
+}
+
+@keyframes skill-heading-glitch {
+  0%,
+  100% {
+    transform: translate(0);
+
+    text-shadow:
+      1px 0 rgba(0, 207, 255, 0.16),
+      -1px 0 rgba(0, 255, 136, 0.16),
+      0 0 3px rgba(57, 255, 20, 0.16);
+  }
+
+  35% {
+    transform: translateX(-1px);
+
+    text-shadow:
+      2px 0 rgba(0, 207, 255, 0.45),
+      -2px 0 rgba(0, 255, 136, 0.4);
+  }
+
+  70% {
+    transform: translateX(1px);
+
+    text-shadow:
+      -2px 0 rgba(0, 207, 255, 0.35),
+      2px 0 rgba(0, 255, 136, 0.35);
+  }
+}
+
+
+
+/* =========================
+   RESPONSIVE SKILLS
+   ========================= */
+
+@media (max-width: 650px) {
+  #skills .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #skills .skill-card {
+    min-height: 230px;
+  }
+}
+
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  #skills .skill-card:hover,
+  #skills .skill-card:hover h3,
+  .hero-terminal-frame:hover .window-title {
+    animation: none;
+  }
+}
