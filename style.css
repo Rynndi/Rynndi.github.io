@@ -1530,8 +1530,8 @@ body {
 /* Social button */
 
 .profile-card .profile-social-link {
+  border-radius: 14px;
   flex: 0 0 46px;
-
   width: 46px;
   height: 46px;
 
@@ -1545,7 +1545,7 @@ body {
   overflow: hidden;
 
   background: #111111;
-  border: 2px solid #ffffff;
+  border: 2px solid transparent;
   border-radius: 4px;
 
   text-decoration: none;
@@ -1561,15 +1561,15 @@ body {
 
 .profile-card .profile-social-icon {
   display: block !important;
-
-  width: 28px !important;
-  height: 28px !important;
+  border-radius: 10px;
+  width: 40px !important;
+  height: 40px !important;
 
   min-width: 0 !important;
   min-height: 0 !important;
 
-  max-width: 28px !important;
-  max-height: 28px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
 
   margin: 0 !important;
   padding: 0 !important;
