@@ -6,11 +6,13 @@
 
   <title>Catherine "Rynn" Di</title>
 
-  <link rel="stylesheet" href="./style.css?v=1010" />
-  <link rel="stylesheet" href="./skills.css?v=1" />
-  <!-- //parser_web.js creates window.parseEnglish -->
-  <script src="parser_web.js" defer></script>
-  <script src="terminal.js" defer></script>
+  <link rel="stylesheet" href="./style.css?v=1014" />
+  <link rel="stylesheet" href="./skills.css?v=2" />
+
+  
+  <!-- parser_web.js creates window.parseEnglish -->
+  <script src="./parser_web.js" defer></script>
+  <script src="./terminal.js" defer></script>
 </head>
 
 <body>
@@ -29,76 +31,160 @@
     <aside class="sidebar">
       <section class="profile-card">
         <div class="avatar-frame">
-            <img
-              class="profile-image"
-              src="images/rynn/sitephoto.png"
-              alt="Portrait of Catherine Rynn Di"
-            />
-          </div>
+          <img
+            class="profile-image"
+            src="./images/rynn/sitephoto.png"
+            alt="Portrait of Catherine Rynn Di"
+          />
+        </div>
 
         <h1>Catherine Di</h1>
-        <p>Software Engineer · Computational Linguist · Designer  </p>
-      </section>
 
-      <nav class="side-buttons">
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#research">Research</a>
-        <a href="#art">Art / Sketches</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <p>
+          Software Engineer · Computational Linguist · Designer
+        </p>
+
+        <!-- ==================================================
+             SOCIAL LINKS
+             ================================================== -->
+
+        <nav
+            class="profile-socials"
+            aria-label="Social and contact links"
+          >
+            <!-- itch.io -->
+            <a
+              class="profile-social-link"
+              href="https://rynndi.itch.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit my itch.io profile"
+              title="itch.io"
+            >
+              <img
+                class="profile-social-icon"
+                src="./images/icons/itch.svg"
+                alt="itch.io"
+              />
+            </a>
+
+            <!-- Email -->
+            <a
+              class="profile-social-link"
+              href="mailto:catherinedi@g.ucla.edu"
+              aria-label="Send me an email"
+              title="Email"
+            >
+              <img
+                class="profile-social-icon"
+                src="./images/icons/email.png"
+                alt="Email"
+              />
+            </a>
+
+            <!-- GitHub -->
+            <a
+              class="profile-social-link"
+              href="https://github.com/rynndi"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit my GitHub profile"
+              title="GitHub"
+            >
+              <img
+                class="profile-social-icon"
+                src="./images/icons/github.png"
+                alt="GitHub"
+              />
+            </a>
+          </nav>
+      </section>
     </aside>
 
     <main class="main-content">
+
+      <!-- ==================================================
+           HOME / TERMINAL
+           ================================================== -->
+
       <section id="home" class="hero-section">
         <section class="hero-terminal-frame">
           <div class="desktop-titlebar">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="window-title">rynn-os.exe</span>
+
+            <span class="window-title">
+              rynn-os.exe
+            </span>
           </div>
 
           <div class="terminal-screen">
             <div id="terminal-output"></div>
 
-            <form id="terminal-form" autocomplete="off">
-              <span class="terminal-prompt">/&gt;</span>
-              <input id="terminal-input" autofocus />
+            <form
+              id="terminal-form"
+              autocomplete="off"
+            >
+              <span class="terminal-prompt">
+                /&gt;
+              </span>
+
+              <input
+                id="terminal-input"
+                autofocus
+              />
             </form>
           </div>
         </section>
 
         <p class="hero-caption">
-          Play with the terminal to discover some SECRET files! Scroll down below for more general information
+          Play with the terminal to discover some SECRET files!
+          Scroll down below for more general information.
         </p>
       </section>
+
+
+      <!-- ==================================================
+           ABOUT
+           ================================================== -->
 
       <section id="about" class="content-section">
         <h2>About Me</h2>
+
         <p>
-          Haillo! My name is Rynn. My passion is designing creative and interactive experiences using web and game technologies, with unusual means. I seek to unify art, language, and programming into one!
+          Haillo! My name is Rynn. My passion is designing creative and
+          interactive experiences using web and game technologies, with
+          unusual means. I seek to unify art, language, and programming
+          into one!
         </p>
       </section>
 
-      <!-- update the skills section -->
+
+      <!-- ==================================================
+           SKILLS
+           ================================================== -->
+
       <section id="skills" class="content-section">
         <h2>Skills</h2>
 
         <div class="skills-grid">
+
           <article class="skill-card">
             <h3>Software Engineering</h3>
+
             <ul>
               <li>Distributed Systems</li>
               <li>Programming Languages</li>
               <li>Compiler Construction</li>
-              <li>Data Structures & Algorithms</li>
+              <li>Data Structures &amp; Algorithms</li>
               <li>Debugging, SCRUM/AGILE</li>
             </ul>
           </article>
 
           <article class="skill-card">
             <h3>Programming Languages</h3>
+
             <ul>
               <li>Python</li>
               <li>Java</li>
@@ -110,6 +196,7 @@
 
           <article class="skill-card">
             <h3>Game Development</h3>
+
             <ul>
               <li>Unity</li>
               <li>Godot</li>
@@ -120,17 +207,19 @@
 
           <article class="skill-card">
             <h3>Research</h3>
+
             <ul>
-              <li>BioInformatics</li>
+              <li>Bioinformatics</li>
               <li>Genomic Algorithmics</li>
               <li>Gene Editing / Cancer Research</li>
-              <li>Linguistics -- Syntax-Prosody Mapping</li>
+              <li>Linguistics — Syntax-Prosody Mapping</li>
               <li>Parsing Mandarin and English</li>
             </ul>
           </article>
 
           <article class="skill-card">
-            <h3>Web / UI/UX /Backend</h3>
+            <h3>Web / UI/UX / Backend</h3>
+
             <ul>
               <li>HTML / CSS</li>
               <li>JavaScript / TypeScript</li>
@@ -141,6 +230,7 @@
 
           <article class="skill-card">
             <h3>AI / NLP</h3>
+
             <ul>
               <li>Artificial Intelligence</li>
               <li>Natural Language Processing</li>
@@ -151,6 +241,7 @@
 
           <article class="skill-card">
             <h3>Creative Tools</h3>
+
             <ul>
               <li>Photoshop</li>
               <li>Premiere</li>
@@ -161,6 +252,7 @@
 
           <article class="skill-card">
             <h3>Platforms</h3>
+
             <ul>
               <li>Linux</li>
               <li>Windows</li>
@@ -168,151 +260,167 @@
               <li>Git / GitHub</li>
             </ul>
           </article>
+
         </div>
       </section>
 
 
+      <!-- ==================================================
+           PROJECTS
+           ================================================== -->
+
+      <section
+        id="projects"
+        class="content-section projects-section"
+      >
+        <h2>Projects</h2>
+
+        <div class="projects-grid">
+
+          <!-- ACM Studio -->
+          <a
+            class="acm-studio-card"
+            href="./projects/acm-studio/index.html"
+            aria-label="Open the ACM Studio project"
+          >
+            <img
+              class="acm-studio-card-image"
+              src="./images/projects/acm-studio/studio-carosel.webp"
+              alt="Preview of the ACM Studio website"
+            />
+          </a>
 
 
-
-
-
-
-
-
-      <!-- projects section -->
-       <!-- distributed server emulator project  -->
-       <section id="projects" class="content-section projects-section">
-          <h2>Projects</h2>
-
-          <div class="projects-grid">
-            
-            <!-- ACM Studio project -->
-                <a
-                  class="acm-studio-card"
-                  href="./projects/acm-studio/index.html"
-                  aria-label="Open the ACM Studio project"
-                >
-                  <img
-                    class="acm-studio-card-image"
-                    src="./images/projects/acm-studio/studio-carosel.webp"
-                    alt="Preview of the ACM Studio website"
-                  />
-                </a>
-
-            <!-- Featured project: entire image card is clickable -->
-            <a
-              class="featured-project-card"
-              href="./projects/distributed-server/index.html"
-              aria-label="Open the Distributed Server Emulator project"
-            >
-              <!-- Terminal title bar -->
-              <div class="featured-project-titlebar">
-                <div class="featured-project-dots" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-
-                <span class="featured-project-window-title">
-                  distributed-server.exe
-                </span>
+          <!-- Distributed Server Emulator -->
+          <a
+            class="featured-project-card"
+            href="./projects/distributed-server/index.html"
+            aria-label="Open the Distributed Server Emulator project"
+          >
+            <div class="featured-project-titlebar">
+              <div
+                class="featured-project-dots"
+                aria-hidden="true"
+              >
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
 
-              <!-- Project preview image -->
-              <div class="featured-project-screen">
-                <img
-                  class="featured-project-image"
-                  src="./images/projects/distSyst/distributed-server-card.png"
-                  alt="Illustrated distributed server control room"
-                />
+              <span class="featured-project-window-title">
+                distributed-server.exe
+              </span>
+            </div>
 
-                <div class="featured-project-green-overlay" aria-hidden="true"></div>
+            <div class="featured-project-screen">
+              <img
+                class="featured-project-image"
+                src="./images/projects/distSyst/distributed-server-card.png"
+                alt="Illustrated distributed server control room"
+              />
 
-                <span class="featured-project-play" aria-hidden="true">
-                  <span>▶</span>
-                </span>
+              <div
+                class="featured-project-green-overlay"
+                aria-hidden="true"
+              ></div>
+
+              <span
+                class="featured-project-play"
+                aria-hidden="true"
+              >
+                <span>▶</span>
+              </span>
+            </div>
+
+            <div class="featured-project-info">
+              <div>
+                <p class="featured-project-number">
+                  PROJECT 02: art by @zestymachine
+                </p>
+
+                <h3>
+                  Distributed Server Emulator
+                </h3>
+
+                <p>
+                  A Distributed Location five-node asynchronous TCP
+                  server network, told in the version of a game!
+                </p>
               </div>
 
-              <!-- Brief description box -->
-              <div class="featured-project-info">
-                <div>
-                  <p class="featured-project-number">PROJECT 02: art by @zestymachine</p>
+              <span class="featured-project-launch">
+                Enter Simulation →
+              </span>
+            </div>
+          </a>
 
-                  <h3>Distributed Server Emulator</h3>
 
-                  <p>
-                    A Distributed Location five-node asynchronous TCP server network, told in the version of a game!
-                  </p>
-                </div>
+          <article class="project-card">
+            <h3>Four Days</h3>
 
-                <span class="featured-project-launch">
-                  Enter Simulation →
-                </span>
-              </div>
-            </a>
+            <p>
+              A meta-narrative game about memory, recursion, source files,
+              and reality editing through a custom terminal-like interface.
+            </p>
+          </article>
 
-            <article class="project-card">
-              <h3>Four Days</h3>
 
-              <p>
-                A meta-narrative game about memory, recursion, source files, and
-                reality editing through a custom terminal-like interface.
-              </p>
-            </article>
+          <article class="project-card">
+            <h3>Mandarin Third Tone Sandhi Parser</h3>
 
-            <article class="project-card">
-              <h3>Mandarin Third Tone Sandhi Parser</h3>
+            <p>
+              An OCaml parser exploring syntax-prosody mapping and
+              constraint-based alternations in Mandarin third tone sandhi.
+            </p>
+          </article>
 
-              <p>
-                An OCaml parser exploring syntax-prosody mapping and
-                constraint-based alternations in Mandarin third tone sandhi.
-              </p>
-            </article>
 
-            <article class="project-card">
-              <h3>Rynn-OS Interface</h3>
+          <article class="project-card">
+            <h3>Rynn-OS Interface</h3>
 
-              <p>
-                A fake OS / virtual filesystem prototype for navigating projects,
-                memories, source files, and worldbuilding fragments.
-              </p>
-            </article>
-          </div>
-        </section>
+            <p>
+              A fake OS / virtual filesystem prototype for navigating
+              projects, memories, source files, and worldbuilding fragments.
+            </p>
+          </article>
 
-      
-      <!-- research section  -->
+        </div>
+      </section>
+
+
+      <!-- ==================================================
+           RESEARCH
+           ================================================== -->
 
       <section id="research" class="content-section">
         <h2>Research</h2>
+
         <p>
-          My research interests include computational linguistics, phonology,
-          prosody, formal grammars, parsing, digital humanities, and tools for
-          making linguistic theory executable and inspectable.
+          My research interests include computational linguistics,
+          phonology, prosody, formal grammars, parsing, digital humanities,
+          and tools for making linguistic theory executable and inspectable.
         </p>
       </section>
 
-      <!-- <section id="art" class="content-section">
-        <h2>Art / Sketches</h2>
 
-        <div class="gallery-grid">
-          <div class="gallery-item">Sketch 01</div>
-          <div class="gallery-item">Sketch 02</div>
-          <div class="gallery-item">Sketch 03</div>
-          <div class="gallery-item">Model 01</div>
-          <div class="gallery-item">Worldbuilding</div>
-          <div class="gallery-item">Concept Art</div>
-        </div>
-      </section> -->
-      <section id="art" class="content-section art-section">
+      <!-- ==================================================
+           ART / SKETCHES
+           ================================================== -->
+
+      <section
+        id="art"
+        class="content-section art-section"
+      >
         <h2>Art / Sketches</h2>
 
         <p class="art-gallery-introduction">
-          Mostly just sketches and character designs. I also do 3D modeling though.
+          Mostly just sketches and character designs. I also do 3D
+          modeling though.
         </p>
 
         <div class="art-gallery-grid">
+
+          <!-- Deltarune -->
           <a
             class="art-gallery-card"
             href="./images/art/deltarune.png"
@@ -330,6 +438,8 @@
             <p>Deltarune</p>
           </a>
 
+
+          <!-- Sketch -->
           <a
             class="art-gallery-card"
             href="./images/art/sketch.png"
@@ -339,16 +449,16 @@
             <div class="art-gallery-image-frame">
               <img
                 src="./images/art/sketch.png"
-                alt="sketch of a guy"
+                alt="Sketch of a character"
                 loading="lazy"
               />
             </div>
 
-            <p>A guy</p>
+            <p>A Guy</p>
           </a>
 
-          
 
+          <!-- Character Design 02 -->
           <a
             class="art-gallery-card"
             href="./images/art/design2.png"
@@ -366,6 +476,8 @@
             <p>Character Design 02</p>
           </a>
 
+
+          <!-- Character Design 01 -->
           <a
             class="art-gallery-card"
             href="./images/art/design1.png"
@@ -382,9 +494,12 @@
 
             <p>Character Design 01</p>
           </a>
+
+
+          <!-- Raiden -->
           <a
             class="art-gallery-card"
-            href="./images/artraiden.png"
+            href="./images/art/raiden.png"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -398,10 +513,9 @@
 
             <p>Raiden</p>
           </a>
-          
 
-         
 
+          <!-- Gojo -->
           <a
             class="art-gallery-card"
             href="./images/art/gojo.png"
@@ -419,6 +533,8 @@
             <p>Gojo</p>
           </a>
 
+
+          <!-- Honkai Star Rail -->
           <a
             class="art-gallery-card"
             href="./images/art/HSR.png"
@@ -436,6 +552,8 @@
             <p>Honkai: Star Rail</p>
           </a>
 
+
+          <!-- 3D Model WIP -->
           <a
             class="art-gallery-card"
             href="./images/art/modelWIP.png"
@@ -453,6 +571,8 @@
             <p>Model Work in Progress</p>
           </a>
 
+
+          <!-- Pirate Design -->
           <a
             class="art-gallery-card"
             href="./images/art/pirate.png"
@@ -470,6 +590,8 @@
             <p>Pirate Design</p>
           </a>
 
+
+          <!-- Little Pirate 3D Model -->
           <a
             class="art-gallery-card"
             href="./images/art/lilpirate.png"
@@ -479,16 +601,16 @@
             <div class="art-gallery-image-frame">
               <img
                 src="./images/art/lilpirate.png"
-                alt="Pirate character design"
+                alt="Small pirate character 3D model"
                 loading="lazy"
               />
             </div>
 
-            <p>lilPirate 3D model</p>
+            <p>Little Pirate 3D Model</p>
           </a>
 
-          
 
+          <!-- WIP 01 -->
           <a
             class="art-gallery-card"
             href="./images/art/wip1.png"
@@ -506,6 +628,8 @@
             <p>Work in Progress 01</p>
           </a>
 
+
+          <!-- WIP 02 -->
           <a
             class="art-gallery-card"
             href="./images/art/wip2.png"
@@ -523,6 +647,8 @@
             <p>Work in Progress 02</p>
           </a>
 
+
+          <!-- WIP 03 -->
           <a
             class="art-gallery-card"
             href="./images/art/wip3.png"
@@ -539,6 +665,9 @@
 
             <p>Work in Progress 03</p>
           </a>
+
+
+          <!-- Fate -->
           <a
             class="art-gallery-card"
             href="./images/art/fate.png"
@@ -555,7 +684,10 @@
 
             <p>Fate</p>
           </a>
-           <a
+
+
+          <!-- Four Days -->
+          <a
             class="art-gallery-card"
             href="./images/art/fourDays.png"
             target="_blank"
@@ -571,15 +703,32 @@
 
             <p>Four Days</p>
           </a>
+
         </div>
       </section>
 
+
+      <!-- ==================================================
+           CONTACT
+           ================================================== -->
+
       <section id="contact" class="content-section">
         <h2>About / Contact</h2>
-        <p>Email: catherinedi@g.ucla.edu</p>
-        <p>GitHub: github.com/rynndi</p>
-        <p>LinkedIn: https://www.linkedin.com/in/catherine-di-4168a6245/</p>
+
+        <p>
+          Email: catherinedi@g.ucla.edu
+        </p>
+
+        <p>
+          GitHub: github.com/rynndi
+        </p>
+
+        <p>
+          LinkedIn:
+          https://www.linkedin.com/in/catherine-di-4168a6245/
+        </p>
       </section>
+
     </main>
   </div>
 </body>
